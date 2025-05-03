@@ -2,11 +2,27 @@ create database fumble;
 
 use fumble;
 
+create table conferencia(
+id int primary key auto_increment,
+conferencia varchar(60) not null unique,
+sigla char(3)
+);
+
+create table divisao(
+id int primary key auto_increment,
+divisao varchar(60) not null unique,
+sigla char(4),
+fk_conferencia int,
+constraint fk_conferencia foreign key (fk_conferencia) references conferencia(id)
+);
+
 create table times(
 id     int primary key auto_increment,
 nome   varchar(30) not null,
 apelido  varchar(30),
-estado   varchar(30)
+estado   varchar(30),
+fk_divisao int,
+constraint fk_divisao foreign key (fk_divisao) references divisao(id)
 );
 
 create table usuarios(
@@ -17,40 +33,55 @@ time  int,
 constraint fk_time foreign key (time) references times(id)
 );
 
-INSERT INTO times (nome, apelido, estado) VALUES
-('Arizona Cardinals', 'Cardinals', 'Arizona'),
-('Atlanta Falcons', 'Falcons', 'Georgia'),
-('Baltimore Ravens', 'Ravens', 'Maryland'),
-('Buffalo Bills', 'Bills', 'New York'),
-('Carolina Panthers', 'Panthers', 'North Carolina'),
-('Chicago Bears', 'Bears', 'Illinois'),
-('Cincinnati Bengals', 'Bengals', 'Ohio'),
-('Cleveland Browns', 'Browns', 'Ohio'),
-('Dallas Cowboys', 'Cowboys', 'Texas'),
-('Denver Broncos', 'Broncos', 'Colorado'),
-('Detroit Lions', 'Lions', 'Michigan'),
-('Green Bay Packers', 'Packers', 'Wisconsin'),
-('Houston Texans', 'Texans', 'Texas'),
-('Indianapolis Colts', 'Colts', 'Indiana'),
-('Jacksonville Jaguars', 'Jaguars', 'Florida'),
-('Kansas City Chiefs', 'Chiefs', 'Missouri'),
-('Las Vegas Raiders', 'Raiders', 'Nevada'),
-('Los Angeles Chargers', 'Chargers', 'California'),
-('Los Angeles Rams', 'Rams', 'California'),
-('Miami Dolphins', 'Dolphins', 'Florida'),
-('Minnesota Vikings', 'Vikings', 'Minnesota'),
-('New England Patriots', 'Patriots', 'Massachusetts'),
-('New Orleans Saints', 'Saints', 'Louisiana'),
-('New York Giants', 'Giants', 'New York'),
-('New York Jets', 'Jets', 'New York'),
-('Philadelphia Eagles', 'Eagles', 'Pennsylvania'),
-('Pittsburgh Steelers', 'Steelers', 'Pennsylvania'),
-('San Francisco 49ers', '49ers', 'California'),
-('Seattle Seahawks', 'Seahawks', 'Washington'),
-('Tampa Bay Buccaneers', 'Buccaneers', 'Florida'),
-('Tennessee Titans', 'Titans', 'Tennessee'),
-('Washington Commanders', 'Commanders', 'Washington D.C.');
+INSERT INTO conferencia (conferencia, sigla) VALUES
+('Conferência Americana de Futebol', 'AFC'),
+('Conferência Nacional de Futebol', 'NFC');
 
+
+INSERT INTO divisao (divisao, sigla, fk_conferencia) VALUES
+('Divisão Leste da AFC', 'AFCE', 1),
+('Divisão Norte da AFC', 'AFCN', 1),
+('Divisão Sul da AFC', 'AFCS', 1),
+('Divisão Oeste da AFC', 'AFCW', 1),
+('Divisão Leste da NFC', 'NFCE', 2),
+('Divisão Norte da NFC', 'NFCN', 2),
+('Divisão Sul da NFC', 'NFCS', 2),
+('Divisão Oeste da NFC', 'NFCW', 2);
+
+
+INSERT INTO times (nome, apelido, estado, fk_divisao) VALUES
+('Buffalo Bills', 'Bills', 'Nova York', 1),
+('Miami Dolphins', 'Dolphins', 'Flórida', 1),
+('New England Patriots', 'Patriots', 'Massachusetts', 1),
+('New York Jets', 'Jets', 'Nova York', 1),
+('Baltimore Ravens', 'Ravens', 'Maryland', 2),
+('Cincinnati Bengals', 'Bengals', 'Ohio', 2),
+('Cleveland Browns', 'Browns', 'Ohio', 2),
+('Pittsburgh Steelers', 'Steelers', 'Pensilvânia', 2),
+('Houston Texans', 'Texans', 'Texas', 3),
+('Indianapolis Colts', 'Colts', 'Indiana', 3),
+('Jacksonville Jaguars', 'Jaguars', 'Flórida', 3),
+('Tennessee Titans', 'Titans', 'Tennessee', 3),
+('Denver Broncos', 'Broncos', 'Colorado', 4),
+('Kansas City Chiefs', 'Chiefs', 'Missouri', 4),
+('Las Vegas Raiders', 'Raiders', 'Nevada', 4),
+('Los Angeles Chargers', 'Chargers', 'Califórnia', 4),
+('Dallas Cowboys', 'Cowboys', 'Texas', 5),
+('New York Giants', 'Giants', 'Nova York', 5),
+('Philadelphia Eagles', 'Eagles', 'Pensilvânia', 5),
+('Washington Commanders', 'Commanders', 'D.C.', 5),
+('Chicago Bears', 'Bears', 'Illinois', 6),
+('Detroit Lions', 'Lions', 'Michigan', 6),
+('Green Bay Packers', 'Packers', 'Wisconsin', 6),
+('Minnesota Vikings', 'Vikings', 'Minnesota', 6),
+('Atlanta Falcons', 'Falcons', 'Geórgia', 7),
+('Carolina Panthers', 'Panthers', 'Carolina do Norte', 7),
+('New Orleans Saints', 'Saints', 'Louisiana', 7),
+('Tampa Bay Buccaneers', 'Buccaneers', 'Flórida', 7),
+('Arizona Cardinals', 'Cardinals', 'Arizona', 8),
+('Los Angeles Rams', 'Rams', 'Califórnia', 8),
+('San Francisco 49ers', '49ers', 'Califórnia', 8),
+('Seattle Seahawks', 'Seahawks', 'Washington', 8);
 
 INSERT INTO usuarios (email, senha, time) VALUES
 ('tom.brady@example.com', '123456', 31),
