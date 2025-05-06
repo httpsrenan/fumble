@@ -23,8 +23,8 @@
                 <li class="agora">Times</li>
                 <li><a href="historia.html">História</a></li>
                 <li><a href="noticias.html">Notícias</a></li>
-                <li><button class="login">Login</button></li>
-                <li><button class="cadastro">Cadastrar</button></li>
+                <li><button class="login" onclick="login()">Login</button></li>
+                <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
             </ul>
         </div>
     </div>
@@ -114,7 +114,7 @@
                 <li>Atlanta Falcons</li>
                 <li>Carolina Panthers</li>
                 <li>New Orleans Saints</li>
-                <li>Tampa Bay Buccaneers</li>
+                <li><a href="times/tampa.html">Tampa Bay Buccaneers</a></li>
             </ul>
         </div>
     </section>
@@ -135,5 +135,13 @@
     </div>
     <!--footer fim-->
 </body>
+<script>
+    function login(){
+    window.location.href = "login.html"
+  }
 
+  function cadastrar(){
+    window.location.href = "cadastro.html"
+  }
+</script>
 </html>
