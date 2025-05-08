@@ -47,7 +47,7 @@ body {
   list-style: none;
   color: #ffffff;
   margin: 55px;
-  padding: 0;
+  padding: 100px;
   gap: 15px;
 }
 
@@ -86,7 +86,7 @@ body {
 /*CADASSTRO*/
 .cadastro-container {
     background-color: black;
-    padding: 40px 0;
+    padding: 50px 0;
     display: flex;
     justify-content: center;
   }
