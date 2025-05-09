@@ -133,12 +133,11 @@ body {
   }
 
   .cadastro-form select {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    border-radius: 15px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
     border: none;
-    background-color: white;
+    margin-bottom: 10px;
   }
   
   .cadastro-form button {
