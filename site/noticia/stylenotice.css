@@ -83,82 +83,66 @@ body {
   font-weight: 650;
 }
 
-/*NOTICIAS*/
+/*NOTICIA*/
 
-.noticias {
-    background-color: black;
-    color: white;
-    padding: 40px 10px;
+.noticia-container {
+    max-width: 800px;
+    margin: 10px auto 0 auto; 
+    padding: 5px;
+    text-align: center;
   }
   
-  .titulo-noticias {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0px 230px;
-    margin-bottom: 30px;
+  .titulo-noticia {
+    font-size: 28px;
+    color: #d1d1d1;
   }
   
-  .titulo-noticias img {
-    height: 40px; 
-  }
-  
-  .titulo-noticias h2 {
-    font-size: 24px;
-    color: white;
-  }
-  
-  .noticia-linha {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-  }
-  
-  .noticia-card {
-    background-color: #1e1e1e;
-    border-radius: 20px;
-    overflow: hidden;
-    max-width: 700px;
-    width: 100%;
-    text-align: left;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-  }
-  
-  .noticia-card img {
-    width: 100%;
-    height: auto;
+  .imagem-noticia {
     display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 50px; 
+  }
+  
+  .conteudo-noticia p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: white;
+    text-align: left;
   }
 
-  .noticia-card:hover{
-    transform: scale(1.05);
+  .conteudo-noticia h3{
+    color: white;
+  }
+
+  .conteudo-noticia a {
+    color: white;
   }
 
 /*FOOTER*/
 
 .footer {
 
-  background-color: rgb(131, 0, 0);
-  height: var(--tamanho-footer);
-  color: #fff;
-  display: flex;
-  font-size: 15px;
-}
-
-
-
-/* compartimento do rodapé */
-.footer .container {
-
-  justify-content: center;
-  text-align: center;
-}
-
-
-/* itens inseridos no rodapé */
-.rodape .conteudo {
-  max-width: 800px;
-  margin: 0 auto;
-}
+    background-color: rgb(131, 0, 0);
+    height: var(--tamanho-footer);
+    color: #fff;
+    display: flex;
+    font-size: 15px;
+  }
+  
+  
+  
+  /* compartimento do rodapé */
+  .footer .container {
+  
+    justify-content: center;
+    text-align: center;
+  }
+  
+  
+  /* itens inseridos no rodapé */
+  .rodape .conteudo {
+    max-width: 800px;
+    margin: 0 auto;
+  }

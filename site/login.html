@@ -32,57 +32,58 @@
     <!--header fim-->
     <div class="cadastro-container">
         <div class="login-card">
-          
-          <div class="cadastro-imagem">
-            <img src="img/logo_nfl.jpg" />
-          </div>
-    
-          <div class="cadastro-form">
-            <h2>Login</h2>
-              
-              <label for="ipt_email">E-mail:</label>
-              <input type="email" id="ipt_email"/>
-    
-              <label for="ipt_senha">Senha:</label>
-              <input type="password" id="ipt_senha"/>
-    
-              <button onclick="login()">Login</button>
-            
-          </div>
-    
-        </div>
-      </div>
-                    
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="img/instax.png" alt="Instagram" width="30px">
 
-                </div>
+            <div class="cadastro-imagem">
+                <img src="img/logo_nfl.jpg" />
+            </div>
+
+            <div class="cadastro-form">
+                <h2>Login</h2>
+
+                <label for="ipt_email">E-mail:</label>
+                <input type="email" id="ipt_email" />
+
+                <label for="ipt_senha">Senha:</label>
+                <input type="password" id="ipt_senha" />
+
+                <button onclick="login()">Login</button>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<!--footer inicio-->
+<div class="footer">
+    <div class="container">
+        <div class="conteudo">
+            <img src="img/logo_fumle.png" width="70px">
+            <div class="redes-sociais">
+                <img src="img/instax.png" alt="Instagram" width="30px">
+
             </div>
         </div>
     </div>
-    </div>
-    <script>
-        function login() {
-            var email = ipt_email.value
-            var senha = ipt_senha.value
+</div>
+</div>
+<script>
+    function login() {
+        var email = ipt_email.value
+        var senha = ipt_senha.value
 
-            if(email == '' || senha == ''){
-                alert('Preencha todos os campos')
-            }else{
-                window.location.href = "noticias.html"
-            }
-            
+        if (email == '' || senha == '') {
+            alert('Preencha todos os campos')
+        } else {
+            window.location.href = "noticias.html"
         }
 
-        function cadastrar() {
-            window.location.href = "cadastro.html"
-        }
-    </script>
-</body>
+    }
+
+    function cadastrar() {
+        window.location.href = "cadastro.html"
+    }
+</script>
+
 
 </html>

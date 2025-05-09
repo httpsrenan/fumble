@@ -157,6 +157,10 @@ body {
   margin-bottom: 10px;
 }
 
+.card:hover{
+  transform: scale(1.05);
+}
+
 .card .btn {
   display: inline-block;
   margin-top: 10px;
