@@ -112,7 +112,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     width: 700px;
-    height: 700px;
+    height: 790px;
 }
 
 .tabela-times ul {
@@ -123,6 +123,11 @@ body {
 
 .tabela-times a {
     color: white;
+}
+
+.tabela-times li {
+  font-size: 17px; 
+  line-height: 1.6; 
 }
 
 /*FOOTER*/

@@ -27,7 +27,8 @@ constraint fk_divisao foreign key (fk_divisao) references divisao(id)
 
 create table usuarios(
 id    int primary key auto_increment,
-email varchar(60) not null unique,
+email varchar(100) not null unique,
+nome varchar(50) not null,
 senha varchar(200),
 time  int,
 constraint fk_time foreign key (time) references times(id)
@@ -83,24 +84,24 @@ INSERT INTO times (nome, apelido, estado, fk_divisao) VALUES
 ('San Francisco 49ers', '49ers', 'Califórnia', 8),
 ('Seattle Seahawks', 'Seahawks', 'Washington', 8);
 
-INSERT INTO usuarios (email, senha, time) VALUES
-('tom.brady@example.com', '123456', 31),
-('patrick.mahomes@example.com', '123456', 17),
-('joe.burrow@example.com', '123456', 7), 
-('justin.jefferson@example.com', '123456', 21), 
-('jalen.hurts@example.com', '123456', 27), 
-('lamar.jackson@example.com', '123456', 3),
-('josh.allen@example.com', '123456', 4), 
-('aaron.donald@example.com', '123456', 19), 
-('tyreek.hill@example.com', '123456', 20),
-('miles.garrett@example.com', '123456', 8), 
-('davante.adams@example.com', '123456', 17), 
-('cooper.kupp@example.com', '123456', 19), 
-('dk.metcalf@example.com', '123456', 29), 
-('trevor.lawrence@example.com', '123456', 15), 
-('nick.bosa@example.com', '123456', 28),
-('micah.parsons@example.com', '123456', 9),
-('derrick.henry@example.com', '123456', 32), 
-('deebo.samuels@example.com', '123456', 28),
-('kirk.cousins@example.com', '123456', 21),
-('chris.godwin@example.com', '123456', 31);
+INSERT INTO usuarios (email, nome, senha, time) VALUES
+('tom.brady@example.com', 'Tom Brady', '123456', 31),
+('patrick.mahomes@example.com', 'Patrick Mahomes', '123456', 17),
+('joe.burrow@example.com', 'Joe Burrow', '123456', 7), 
+('justin.jefferson@example.com', 'Justin Jefferson', '123456', 21), 
+('jalen.hurts@example.com', 'Jalen Hurts', '123456', 27), 
+('lamar.jackson@example.com', 'Lamar Jackson', '123456', 3),
+('josh.allen@example.com', 'Josh Allen', '123456', 4), 
+('aaron.donald@example.com', 'Aaron Donald', '123456', 19), 
+('tyreek.hill@example.com', 'Tyreek Hill', '123456', 20),
+('miles.garrett@example.com', 'Myles Garrett', '123456', 8), 
+('davante.adams@example.com', 'Davante Adams', '123456', 17), 
+('cooper.kupp@example.com', 'Cooper Kupp', '123456', 19), 
+('dk.metcalf@example.com', 'DK Metcalf', '123456', 29), 
+('trevor.lawrence@example.com', 'Trevor Lawrence', '123456', 15), 
+('nick.bosa@example.com', 'Nick Bosa', '123456', 28),
+('micah.parsons@example.com', 'Micah Parsons', '123456', 9),
+('derrick.henry@example.com', 'Derrick Henry', '123456', 32), 
+('deebo.samuels@example.com', 'Deebo Samuel', '123456', 28),
+('kirk.cousins@example.com', 'Kirk Cousins', '123456', 21),
+('chris.godwin@example.com', 'Chris Godwin', '123456', 31);
