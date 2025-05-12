@@ -134,20 +134,69 @@
         window.location.href = "login.html"
     }
 
-    function cadastrar() {
-        var nome = ipt_nome.value
-        var email = ipt_email.value
-        var senha = ipt_senha.value
-        var confirma = ipt_confirmar.value
-        if (nome == '' || email == '' || senha == '' || confirma == '') {
-            alert('Preencha todos os campos')
-        } else if (senha == confirma) {
-            alert('Senhas estão diferentes')
-        } else {
-            window.location.href = "login.html"
-        }
+  function cadastrar() {
+    // aguardar();
 
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = ipt_nome.value;
+    var emailVar = ipt_email.value;
+    var senhaVar = ipt_senha.value;
+    var confirmacaoSenhaVar = ipt_confirmar.value;
+    
+
+    // Verificando se há algum campo em branco
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""
+    ) {
+      alert('Preencha todos os campos!');
+
+      finalizarAguardar();
+      return false;
+    } else {
+        //VERIFICAR SE PODE TIRAR
+      setInterval(sumirMensagem, 5000);
     }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            window.location = "login.html";
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+           alert("Houve um erro ao tentar realizar o cadastro!");
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+
+    
 </script>
 
 
