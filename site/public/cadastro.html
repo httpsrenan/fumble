@@ -107,7 +107,8 @@
                 </select>
                 <br>
                 <button onclick="cadastrar()">Cadastrar</button>
-
+                <br>
+                <div id="alerta"></div>
             </div>
         </div>
     </div>
@@ -134,69 +135,76 @@
         window.location.href = "login.html"
     }
 
-  function cadastrar() {
-    // aguardar();
+    function cadastrar() {
+        // aguardar();
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = ipt_nome.value;
-    var emailVar = ipt_email.value;
-    var senhaVar = ipt_senha.value;
-    var confirmacaoSenhaVar = ipt_confirmar.value;
-    
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = ipt_nome.value;
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+        var confirmacaoSenhaVar = ipt_confirmar.value;
 
-    // Verificando se há algum campo em branco
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-    ) {
-      alert('Preencha todos os campos!');
 
-      finalizarAguardar();
-      return false;
-    } else {
-        //VERIFICAR SE PODE TIRAR
-      setInterval(sumirMensagem, 5000);
+        // Verificando se há algum campo em branco
+        if (
+            nomeVar == "" ||
+            emailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == ""
+        ) {
+            alerta.innerHTML = ('Preencha todos os campos!');
+
+            finalizarAguardar();
+            return false;
+        } else if (senhaVar != confirmacaoSenhaVar) {
+            alerta.innerHTML = ('Senhas diferentes!');
+
+            finalizarAguardar();
+            return false;
+        } else if (!emailVar.includes("@")) {
+            alerta.innerHTML = ('Email não possui @!');
+
+            finalizarAguardar();
+            return false;
+        } 
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    window.location = "login.html";
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    alerta.innerHTML = ("Email já esta em uso!");
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+        return false;
     }
 
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-            window.location = "login.html";
-
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-           alert("Houve um erro ao tentar realizar o cadastro!");
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
-
-    return false;
-  }
 
 
-    
 </script>
 
 
