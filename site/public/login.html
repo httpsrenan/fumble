@@ -80,8 +80,8 @@
         var senhaVar = ipt_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            alerta.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+            alerta.innerHTML = ("Mensagem de erro para todos os campos em branco");
+            
             return false;
         }
 
@@ -110,17 +110,20 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id
 
+                    console.log('DEU CERTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO');
+                    
+
                     window.location = "noticias.html";
 
                 });
 
             } else {
 
+                alerta.innerHTML = ("Houve um erro ao tentar realizar o login!");
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
                 });
             }
 
