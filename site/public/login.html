@@ -81,7 +81,7 @@
 
         if (emailVar == "" || senhaVar == "") {
             alerta.innerHTML = ("Mensagem de erro para todos os campos em branco");
-            
+
             return false;
         }
 
@@ -97,6 +97,9 @@
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
+
+
+
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
@@ -111,7 +114,7 @@
                     sessionStorage.ID_USUARIO = json.id
 
                     console.log('DEU CERTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO');
-                    
+
 
                     window.location = "noticias.html";
 
@@ -121,7 +124,6 @@
 
                 alerta.innerHTML = ("Houve um erro ao tentar realizar o login!");
                 console.log("Houve um erro ao tentar realizar o login!");
-
                 resposta.text().then(texto => {
                     console.error(texto);
                 });
