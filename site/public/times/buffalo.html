@@ -1,99 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Buffalo Bills </title>
+  <title>FUMBLE - Buffalo Bills </title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/buffalo.png" >
-              <h1>BUFFALO BILLS</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>O Buffalo Bills é uma franquia sediada em Orchard Park, Nova York, e foi fundada em 1960 como membro original da American Football League (AFL). <br>
-                Após a fusão com a NFL em 1970, os Bills enfrentaram altos e baixos, mas marcaram seu nome na história com uma campanha histórica no início dos anos 1990, 
-                quando chegaram a quatro Super Bowls consecutivos (1990–1993), um feito inédito. <br>
-                Apesar de não terem vencido nenhum título naquela sequência, a equipe ficou marcada por sua consistência, talento ofensivo e pela base de fãs extremamente leal 
-                e apaixonada, a famosa “Bills Mafia”. <br>
-                Nos últimos anos, o time voltou ao protagonismo com um elenco jovem e promissor, se tornando um dos principais concorrentes na AFC. </p>
-              
-            </div>
-        
-            <div style="background-color: #e4092f; " class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Jim Kelly (QB) </h2>
-                <p>Ícone absoluto dos Bills, Jim Kelly foi o cérebro por trás do ataque “K-Gun”, um dos sistemas ofensivos mais rápidos e eficientes da liga em sua época. <br>
-                  Atuando de 1986 a 1996, Kelly liderou a equipe às quatro aparições consecutivas no Super Bowl, com grande precisão, controle do jogo e liderança inquestionável. <br>
-                  Mesmo sem títulos, sua importância para a franquia e para a cidade de Buffalo o imortalizou. Entrou para o Hall da Fama do Futebol Americano Profissional em 2002. </p>
-              </div>
-              <img src="jogadores_img/Jim_Kelly_bills.jpg" >
-            </div>
-        
-            <div style="background-color: #003091; color: white;"  class="card-jogador">
-                <img src="jogadores_img/josh_allen.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Josh Allen (QB)</h2>
-                <p>Draftado em 2018, Josh Allen trouxe nova esperança aos torcedores dos Bills. <br>
-                  Com um braço extremamente forte, mobilidade fora do comum e um estilo de jogo agressivo, Allen rapidamente evoluiu de um quarterback 
-                  com potencial bruto para um dos melhores da NFL. <br>
-                  Ele liderou a equipe em campanhas consistentes aos playoffs, quebrou recordes de franquia em jardas aéreas e touchdowns, 
-                  e é o centro de um time que sonha em conquistar seu primeiro Super Bowl. </p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/buffalo.png">
+      <h1>BUFFALO BILLS</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>O Buffalo Bills é uma franquia sediada em Orchard Park, Nova York, e foi fundada em 1960 como membro original
+        da American Football League (AFL). <br>
+        Após a fusão com a NFL em 1970, os Bills enfrentaram altos e baixos, mas marcaram seu nome na história com uma
+        campanha histórica no início dos anos 1990,
+        quando chegaram a quatro Super Bowls consecutivos (1990–1993), um feito inédito. <br>
+        Apesar de não terem vencido nenhum título naquela sequência, a equipe ficou marcada por sua consistência,
+        talento ofensivo e pela base de fãs extremamente leal
+        e apaixonada, a famosa “Bills Mafia”. <br>
+        Nos últimos anos, o time voltou ao protagonismo com um elenco jovem e promissor, se tornando um dos principais
+        concorrentes na AFC. </p>
+
+    </div>
+
+    <div style="background-color: #e4092f; " class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Jim Kelly (QB) </h2>
+        <p>Ícone absoluto dos Bills, Jim Kelly foi o cérebro por trás do ataque “K-Gun”, um dos sistemas ofensivos mais
+          rápidos e eficientes da liga em sua época. <br>
+          Atuando de 1986 a 1996, Kelly liderou a equipe às quatro aparições consecutivas no Super Bowl, com grande
+          precisão, controle do jogo e liderança inquestionável. <br>
+          Mesmo sem títulos, sua importância para a franquia e para a cidade de Buffalo o imortalizou. Entrou para o
+          Hall da Fama do Futebol Americano Profissional em 2002. </p>
+      </div>
+      <img src="jogadores_img/Jim_Kelly_bills.jpg">
+    </div>
+
+    <div style="background-color: #003091; color: white;" class="card-jogador">
+      <img src="jogadores_img/josh_allen.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Josh Allen (QB)</h2>
+        <p>Draftado em 2018, Josh Allen trouxe nova esperança aos torcedores dos Bills. <br>
+          Com um braço extremamente forte, mobilidade fora do comum e um estilo de jogo agressivo, Allen rapidamente
+          evoluiu de um quarterback
+          com potencial bruto para um dos melhores da NFL. <br>
+          Ele liderou a equipe em campanhas consistentes aos playoffs, quebrou recordes de franquia em jardas aéreas e
+          touchdowns,
+          e é o centro de um time que sonha em conquistar seu primeiro Super Bowl. </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

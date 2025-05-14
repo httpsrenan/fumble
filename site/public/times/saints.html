@@ -1,94 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - New Orleans Saints </title>
+  <title>FUMBLE - New Orleans Saints </title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/saints.png" >
-              <h1>NEW ORLEANS SAINTS</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>Criado em 1995, o Carolina Panthers rapidamente se tornou uma franquia competitiva, alcançando o Super Bowl em sua 2ª década de existência (em 2003 e 2015). <br>
-                A equipe é reconhecida por sua forte defesa em diversas fases e por jogadores explosivos como Steve Smith e Cam Newton. <br>
-                A temporada de 2015, com uma campanha de 15–1, foi um marco na história da equipe, embora tenha terminado com derrota no Super Bowl 50.</p>
-              
-            </div>
-        
-            <div style="background-color: #dcbd8c;" class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Drew Brees (QB)</h2>
-                <p>Drew Brees é o maior ícone da história dos Saints. <br>
-                    Ele transformou a franquia com sua precisão cirúrgica, liderança e constância. Brees quebrou inúmeros recordes 
-                   de passes e levou os Saints a vitórias memoráveis, incluindo o título do Super Bowl XLIV.</p>
-              </div>
-              <img src="jogadores_img/Drew_Brees_saints.jpg" >
-            </div>
-        
-            <div style="background-color: white;" class="card-jogador">
-                <img src="jogadores_img/Alvin_Kamara_saints.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Alvin Kamara (RB)</h2>
-                <p>Alvin Kamara é uma arma ofensiva completa. <br>
-                    Sua versatilidade para correr e receber passes, aliada à sua visão de campo e agilidade, o tornam peça central no ataque dos Saints. <br>
-                   Desde que chegou à liga, tem sido um dos running backs mais produtivos.</p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/saints.png">
+      <h1>NEW ORLEANS SAINTS</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>Criado em 1995, o Carolina Panthers rapidamente se tornou uma franquia competitiva, alcançando o Super Bowl em
+        sua 2ª década de existência (em 2003 e 2015). <br>
+        A equipe é reconhecida por sua forte defesa em diversas fases e por jogadores explosivos como Steve Smith e Cam
+        Newton. <br>
+        A temporada de 2015, com uma campanha de 15–1, foi um marco na história da equipe, embora tenha terminado com
+        derrota no Super Bowl 50.</p>
+
+    </div>
+
+    <div style="background-color: #dcbd8c;" class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Drew Brees (QB)</h2>
+        <p>Drew Brees é o maior ícone da história dos Saints. <br>
+          Ele transformou a franquia com sua precisão cirúrgica, liderança e constância. Brees quebrou inúmeros recordes
+          de passes e levou os Saints a vitórias memoráveis, incluindo o título do Super Bowl XLIV.</p>
+      </div>
+      <img src="jogadores_img/Drew_Brees_saints.jpg">
+    </div>
+
+    <div style="background-color: white;" class="card-jogador">
+      <img src="jogadores_img/Alvin_Kamara_saints.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Alvin Kamara (RB)</h2>
+        <p>Alvin Kamara é uma arma ofensiva completa. <br>
+          Sua versatilidade para correr e receber passes, aliada à sua visão de campo e agilidade, o tornam peça central
+          no ataque dos Saints. <br>
+          Desde que chegou à liga, tem sido um dos running backs mais produtivos.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

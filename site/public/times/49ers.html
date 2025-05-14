@@ -99,21 +99,21 @@
       window.location.href = "../cadastro.html"
     }
 
-      function favoritar(elemento) {
-    
-    var estrela = elemento.getElementsByTagName("span")[0];
-    var texto = elemento.getElementsByTagName("span")[1];
+    function favoritar(elemento) {
 
-    if (estrela.innerHTML === '☆') {
-      estrela.innerHTML = '★';
-      estrela.style.color = 'gold';
-      texto.innerHTML = 'Time favoritado';
-    } else {
-      estrela.innerHTML = '☆';
-      estrela.style.color = 'gray';
-      texto.innerHTML = 'Favoritar time';
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
     }
-  }
   </script>
 </body>
 

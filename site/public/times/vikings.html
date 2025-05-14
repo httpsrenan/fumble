@@ -1,96 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Minnesota Vikings </title>
+  <title>FUMBLE - Minnesota Vikings </title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/vikings.png" >
-              <h1>MINNESOTA VIKINGS</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>Fundado em 1961, os Vikings são uma das franquias mais consistentes da NFL, embora ainda busquem seu primeiro título de Super Bowl. <br>
-                Foram campeões da NFC em quatro ocasiões (1970s), mas perderam todas as finais. <br>
-                Conhecidos por sua torcida apaixonada e pelo famoso “Skol Chant”, os Vikings sempre estão na disputa, alternando entre boas campanhas e momentos frustrantes. <br>
-                Minnesota é sinônimo de competitividade, rivalidade e futebol físico. </p>
-              
-            </div>
-        
-            <div style="background-color: white" class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Randy Moss (WR)</h2>
-                <p>Draftado em 1998, Moss teve uma das temporadas de estreia mais impactantes da história da NFL. <br>
-                    Com velocidade absurda e habilidade para receber passes longos, redefiniu o que era ser um “deep threat”. <br>
-                    Embora tenha tido uma carreira em várias equipes, seu impacto inicial e legado em Minnesota o colocam como o jogador mais eletrizante da história dos Vikings. <br>
-                    Está no Hall da Fama desde 2018. </p>
-              </div>
-              <img src="jogadores_img/Randy_Moss_vikings.jpg" >
-            </div>
-        
-            <div style="background-color: #4f2683;" class="card-jogador">
-                <img src="jogadores_img/Justin_Jefferson_vikings.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Justin Jefferson (WR)</h2>
-                <p> Justin Jefferson rapidamente se tornou um dos melhores wide receivers da NFL desde que foi draftado em 2020. <br>
-                    Com rotas precisas, mãos seguras e inteligência em campo, venceu o prêmio de Jogador Ofensivo do Ano em 2022. <br>
-                    É o motor ofensivo dos Vikings e um dos rostos da liga. </p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/vikings.png">
+      <h1>MINNESOTA VIKINGS</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>Fundado em 1961, os Vikings são uma das franquias mais consistentes da NFL, embora ainda busquem seu primeiro
+        título de Super Bowl. <br>
+        Foram campeões da NFC em quatro ocasiões (1970s), mas perderam todas as finais. <br>
+        Conhecidos por sua torcida apaixonada e pelo famoso “Skol Chant”, os Vikings sempre estão na disputa, alternando
+        entre boas campanhas e momentos frustrantes. <br>
+        Minnesota é sinônimo de competitividade, rivalidade e futebol físico. </p>
+
+    </div>
+
+    <div style="background-color: #4f2683" class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Randy Moss (WR)</h2>
+        <p>Draftado em 1998, Moss teve uma das temporadas de estreia mais impactantes da história da NFL. <br>
+          Com velocidade absurda e habilidade para receber passes longos, redefiniu o que era ser um “deep threat”. <br>
+          Embora tenha tido uma carreira em várias equipes, seu impacto inicial e legado em Minnesota o colocam como o
+          jogador mais eletrizante da história dos Vikings. <br>
+          Está no Hall da Fama desde 2018. </p>
+      </div>
+      <img src="jogadores_img/Randy_Moss_vikings.jpg">
+    </div>
+
+    <div style="background-color: white;" class="card-jogador">
+      <img src="jogadores_img/Justin_Jefferson_vikings.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Justin Jefferson (WR)</h2>
+        <p> Justin Jefferson rapidamente se tornou um dos melhores wide receivers da NFL desde que foi draftado em 2020.
+          <br>
+          Com rotas precisas, mãos seguras e inteligência em campo, venceu o prêmio de Jogador Ofensivo do Ano em 2022.
+          <br>
+          É o motor ofensivo dos Vikings e um dos rostos da liga. </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

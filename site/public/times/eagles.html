@@ -1,96 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Philadelphia Eagles </title>
+  <title>FUMBLE - Philadelphia Eagles </title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/eagles.png" >
-              <h1>PHILADELPHIA EAGLES</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>Fundados em 1933, os Eagles são uma das franquias mais resilientes da NFL. <br>
-                Por décadas, foram conhecidos por suas defesas duras e uma torcida fanática. <br>
-                A equipe venceu duas vezes o Super Bowl(2017 e 2024) sendo o atual campeão do Super Bowl. <br>
-                Os Eagles mesclam tradição e inovação, e se tornaram uma potência recente na NFC. </p>
-              
-            </div>
-        
-            <div style="background-color: #294559;" class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Reggie White (DE)</h2>
-                <p>Reggie White, o “Ministro da Defesa”, foi um dos jogadores mais dominantes da história da NFL. <br>
-                    Atuou pelos Eagles entre 1985 e 1992, acumulando 124 sacks nesse período. <br>
-                    Combinava força, técnica e fé em campo, sendo um dos líderes mais respeitados da liga. <br>
-                    Entrou para o Hall da Fama em 2006 e é até hoje uma figura lendária na Filadélfia. </p>
-              </div>
-              <img src="jogadores_img/Reggie_White_eagles.jpg" >
-            </div>
-        
-            <div style="background-color: #3b6849;" class="card-jogador">
-                <img src="jogadores_img/Jalen_Hurts_eagles.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Jalen Hurts (QB)</h2>
-                <p>Draftado em 2020, Hurts evoluiu rapidamente de backup a estrela da franquia. <br>
-                    Em 2022, liderou os Eagles até o Super Bowl com uma temporada espetacular, combinando inteligência, mobilidade e liderança. <br>
-                    É um dos quarterbacks mais perigosos da liga tanto no passe quanto na corrida, e a alma da atual geração dos Eagles. </p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/eagles.png">
+      <h1>PHILADELPHIA EAGLES</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>Fundados em 1933, os Eagles são uma das franquias mais resilientes da NFL. <br>
+        Por décadas, foram conhecidos por suas defesas duras e uma torcida fanática. <br>
+        A equipe venceu duas vezes o Super Bowl(2017 e 2024) sendo o atual campeão do Super Bowl. <br>
+        Os Eagles mesclam tradição e inovação, e se tornaram uma potência recente na NFC. </p>
+
+    </div>
+
+    <div style="background-color: #294559;" class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Reggie White (DE)</h2>
+        <p>Reggie White, o “Ministro da Defesa”, foi um dos jogadores mais dominantes da história da NFL. <br>
+          Atuou pelos Eagles entre 1985 e 1992, acumulando 124 sacks nesse período. <br>
+          Combinava força, técnica e fé em campo, sendo um dos líderes mais respeitados da liga. <br>
+          Entrou para o Hall da Fama em 2006 e é até hoje uma figura lendária na Filadélfia. </p>
+      </div>
+      <img src="jogadores_img/Reggie_White_eagles.jpg">
+    </div>
+
+    <div style="background-color: #3b6849;" class="card-jogador">
+      <img src="jogadores_img/Jalen_Hurts_eagles.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Jalen Hurts (QB)</h2>
+        <p>Draftado em 2020, Hurts evoluiu rapidamente de backup a estrela da franquia. <br>
+          Em 2022, liderou os Eagles até o Super Bowl com uma temporada espetacular, combinando inteligência, mobilidade
+          e liderança. <br>
+          É um dos quarterbacks mais perigosos da liga tanto no passe quanto na corrida, e a alma da atual geração dos
+          Eagles. </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

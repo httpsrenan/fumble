@@ -1,97 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Cincinnati Bengals </title>
+  <title>FUMBLE - Cincinnati Bengals </title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/bengals.png" >
-              <h1>CINCINNATI BENGALS</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>Fundados em 1968, os Bengals tiveram uma história marcada por altos e baixos. <br>
-                A equipe chegou ao Super Bowl três vezes (1981, 1988 e 2021), mas ainda busca seu primeiro título. <br>
-                Após décadas de resultados modestos, a franquia encontrou novo fôlego recentemente com uma geração talentosa liderada por Joe Burrow e Ja'Marr Chase, 
-                se firmando como uma potência da AFC. <br>
-                A combinação de ataque explosivo e defesa sólida devolveu relevância aos Bengals na liga. </p>
-              
-            </div>
-        
-            <div style="background-color: #ff4e02;" class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Anthony Muñoz (OT)  </h2>
-                <p>Considerado o melhor offensive tackle da história da NFL, Anthony Muñoz jogou sua carreira inteira pelos Bengals (1980–1992). <br>
-                    Com técnica impecável e força física dominante, ele protegeu os quarterbacks da franquia por mais de uma década. <br>
-                    Foi eleito para 11 Pro Bowls e entrou no Hall da Fama em 1998. <br>
-                    Seu legado vai além do campo, sendo um dos embaixadores da franquia até hoje. </p>
-              </div>
-              <img src="jogadores_img/Anthony_Munoz_bengals.jpg" >
-            </div>
-        
-            <div style="background-color: #ff4e02;" class="card-jogador">
-                <img src="jogadores_img/Burrow_bengals.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Joe Burrow (QB) </h2>
-                <p>Joe Burrow foi a primeira escolha do Draft de 2020 e rapidamente levou os Bengals de volta à elite da NFL. <br>
-                    Em 2021, conduziu o time ao Super Bowl, com frieza, precisão e liderança que lembram os grandes quarterbacks da história. <br>
-                    Mesmo com lesões que afetaram partes de sua carreira, Burrow segue como o principal nome do time e um dos melhores quarterbacks da liga, com um futuro promissor. </p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/bengals.png">
+      <h1>CINCINNATI BENGALS</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>Fundados em 1968, os Bengals tiveram uma história marcada por altos e baixos. <br>
+        A equipe chegou ao Super Bowl três vezes (1981, 1988 e 2021), mas ainda busca seu primeiro título. <br>
+        Após décadas de resultados modestos, a franquia encontrou novo fôlego recentemente com uma geração talentosa
+        liderada por Joe Burrow e Ja'Marr Chase,
+        se firmando como uma potência da AFC. <br>
+        A combinação de ataque explosivo e defesa sólida devolveu relevância aos Bengals na liga. </p>
+
+    </div>
+
+    <div style="background-color: #ff4e02;" class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Anthony Muñoz (OT) </h2>
+        <p>Considerado o melhor offensive tackle da história da NFL, Anthony Muñoz jogou sua carreira inteira pelos
+          Bengals (1980–1992). <br>
+          Com técnica impecável e força física dominante, ele protegeu os quarterbacks da franquia por mais de uma
+          década. <br>
+          Foi eleito para 11 Pro Bowls e entrou no Hall da Fama em 1998. <br>
+          Seu legado vai além do campo, sendo um dos embaixadores da franquia até hoje. </p>
+      </div>
+      <img src="jogadores_img/Anthony_Munoz_bengals.jpg">
+    </div>
+
+    <div style="background-color: #ff4e02;" class="card-jogador">
+      <img src="jogadores_img/Burrow_bengals.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Joe Burrow (QB) </h2>
+        <p>Joe Burrow foi a primeira escolha do Draft de 2020 e rapidamente levou os Bengals de volta à elite da NFL.
+          <br>
+          Em 2021, conduziu o time ao Super Bowl, com frieza, precisão e liderança que lembram os grandes quarterbacks
+          da história. <br>
+          Mesmo com lesões que afetaram partes de sua carreira, Burrow segue como o principal nome do time e um dos
+          melhores quarterbacks da liga, com um futuro promissor. </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

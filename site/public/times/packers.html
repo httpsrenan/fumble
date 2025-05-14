@@ -1,97 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Green Bay Packers </title>
+  <title>FUMBLE - Green Bay Packers </title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/packers.png" >
-              <h1>GREEN BAY PACKERS</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>Fundados em 1919, os Packers são a franquia mais antiga da NFL ainda em atividade no mesmo lugar. <br>
-                Situada na pequena cidade de Green Bay, Wisconsin, é também a única equipe de propriedade comunitária. <br>
-                Vencedores de 13 títulos da NFL (incluindo quatro Super Bowls), os Packers foram dominantes nas eras de Vince Lombardi (década de 60), 
-                Brett Favre (anos 90) e Aaron Rodgers (anos 2000 e 2010). <br>
-                Green Bay representa tradição, excelência e uma das histórias mais ricas do esporte americano. </p>
-              
-            </div>
-        
-            <div style="background-color: #00563c;" class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Brett Favre (QB) </h2>
-                <p>Favre foi o rosto dos Packers entre 1992 e 2007. <br>
-                    Com estilo ousado, carisma e durabilidade impressionante, foi três vezes MVP da NFL (1995–1997) e liderou a equipe ao título do Super Bowl XXXI. <br>
-                    Acumulou mais de 70 mil jardas aéreas e é considerado um dos quarterbacks mais influentes da história da liga. <br>
-                    Entrou para o Hall da Fama em 2016. </p>
-              </div>
-              <img src="jogadores_img/Brett_Favre_packers.jpg" >
-            </div>
-        
-            <div style="background-color: #fecb47;" class="card-jogador">
-                <img src="jogadores_img/jordan_love_packers.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Jordan Love (QB)</h2>
-                <p> Depois de anos como reserva de Aaron Rodgers, Jordan Love finalmente assumiu o comando da franquia em 2023 e impressionou. <br>
-                    Com atuações seguras, liderança crescente e grande performance nos playoffs, ele conquistou a confiança da torcida e da comissão técnica. <br>
-                    Love é o rosto da nova era dos Packers e a esperança para manter a longa linhagem de grandes quarterbacks da franquia.</p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/packers.png">
+      <h1>GREEN BAY PACKERS</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>Fundados em 1919, os Packers são a franquia mais antiga da NFL ainda em atividade no mesmo lugar. <br>
+        Situada na pequena cidade de Green Bay, Wisconsin, é também a única equipe de propriedade comunitária. <br>
+        Vencedores de 13 títulos da NFL (incluindo quatro Super Bowls), os Packers foram dominantes nas eras de Vince
+        Lombardi (década de 60),
+        Brett Favre (anos 90) e Aaron Rodgers (anos 2000 e 2010). <br>
+        Green Bay representa tradição, excelência e uma das histórias mais ricas do esporte americano. </p>
+
+    </div>
+
+    <div style="background-color: #00563c;" class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Brett Favre (QB) </h2>
+        <p>Favre foi o rosto dos Packers entre 1992 e 2007. <br>
+          Com estilo ousado, carisma e durabilidade impressionante, foi três vezes MVP da NFL (1995–1997) e liderou a
+          equipe ao título do Super Bowl XXXI. <br>
+          Acumulou mais de 70 mil jardas aéreas e é considerado um dos quarterbacks mais influentes da história da liga.
+          <br>
+          Entrou para o Hall da Fama em 2016. </p>
+      </div>
+      <img src="jogadores_img/Brett_Favre_packers.jpg">
+    </div>
+
+    <div style="background-color: #fecb47;" class="card-jogador">
+      <img src="jogadores_img/jordan_love_packers.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Jordan Love (QB)</h2>
+        <p> Depois de anos como reserva de Aaron Rodgers, Jordan Love finalmente assumiu o comando da franquia em 2023 e
+          impressionou. <br>
+          Com atuações seguras, liderança crescente e grande performance nos playoffs, ele conquistou a confiança da
+          torcida e da comissão técnica. <br>
+          Love é o rosto da nova era dos Packers e a esperança para manter a longa linhagem de grandes quarterbacks da
+          franquia.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

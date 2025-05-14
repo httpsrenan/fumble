@@ -1,95 +1,127 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Tampa Bay Buccaneers</title>
+  <title>FUMBLE - Tampa Bay Buccaneers</title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/tampa.png" >
-              <h1>TAMPA BAY BUCCANEERS</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>Fundado em 1976, o Tampa Bay Buccaneers passou por anos difíceis até conquistar seu espaço na NFL. <br>
-                O primeiro grande momento veio em 2002, com uma defesa lendária liderada por Derrick Brooks e Warren Sapp, que levou o time ao título do Super Bowl XXXVII. <br>
-                Em 2020, a chegada de Tom Brady marcou uma nova era vitoriosa, culminando na conquista do Super Bowl LV em plena temporada de estreia do quarterback na equipe. <br>
-                A franquia se destacou por sua capacidade de montar defesas dominantes e por seu espírito de reconstrução, se reinventando em momentos cruciais da história. A torcida, conhecida por sua paixão e lealdade, é uma das mais engajadas da Conferência Nacional.</p>
-              
-            </div>
-        
-            <div style="background-color: #c92a2a;" class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Derrick Brooks (LB)</h2>
-                <p>Derrick Brooks foi o líder da defesa campeã do Super Bowl XXXVII. <br>
-                  Conhecido por sua inteligência, ética de trabalho e impacto em campo, foi o símbolo dos Bucs nos anos 2000. <br>
-                  É um Hall da Fama e inspiração para gerações futuras. </p>
-              </div>
-              <img src="jogadores_img/Derrick_Brooks_tampa.jpg" >
-            </div>
-        
-            <div style="background-color: white;" class="card-jogador">
-                <img src="jogadores_img/Mayfield.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Baker Mayfield (QB)</h2>
-                <p>Após passar por vários times e viver altos e baixos na carreira, Baker Mayfield chegou a Tampa Bay em 2023 com desconfiança  e surpreendeu a todos. <br>
-                  Assumiu o controle do ataque, mostrou liderança e levou os Buccaneers aos playoffs, vencendo inclusive um jogo de pós-temporada. <br>
-                  Sua resiliência, precisão nos passes e química com os recebedores o colocaram como peça-chave no novo ciclo da franquia, sendo hoje o principal nome do time. </p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/tampa.png">
+      <h1>TAMPA BAY BUCCANEERS</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>Fundado em 1976, o Tampa Bay Buccaneers passou por anos difíceis até conquistar seu espaço na NFL. <br>
+        O primeiro grande momento veio em 2002, com uma defesa lendária liderada por Derrick Brooks e Warren Sapp, que
+        levou o time ao título do Super Bowl XXXVII. <br>
+        Em 2020, a chegada de Tom Brady marcou uma nova era vitoriosa, culminando na conquista do Super Bowl LV em plena
+        temporada de estreia do quarterback na equipe. <br>
+        A franquia se destacou por sua capacidade de montar defesas dominantes e por seu espírito de reconstrução, se
+        reinventando em momentos cruciais da história. A torcida, conhecida por sua paixão e lealdade, é uma das mais
+        engajadas da Conferência Nacional.</p>
+
+    </div>
+
+    <div style="background-color: #c92a2a;" class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Derrick Brooks (LB)</h2>
+        <p>Derrick Brooks foi o líder da defesa campeã do Super Bowl XXXVII. <br>
+          Conhecido por sua inteligência, ética de trabalho e impacto em campo, foi o símbolo dos Bucs nos anos 2000.
+          <br>
+          É um Hall da Fama e inspiração para gerações futuras. </p>
+      </div>
+      <img src="jogadores_img/Derrick_Brooks_tampa.jpg">
+    </div>
+
+    <div style="background-color: white;" class="card-jogador">
+      <img src="jogadores_img/Mayfield.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Baker Mayfield (QB)</h2>
+        <p>Após passar por vários times e viver altos e baixos na carreira, Baker Mayfield chegou a Tampa Bay em 2023
+          com desconfiança e surpreendeu a todos. <br>
+          Assumiu o controle do ataque, mostrou liderança e levou os Buccaneers aos playoffs, vencendo inclusive um jogo
+          de pós-temporada. <br>
+          Sua resiliência, precisão nos passes e química com os recebedores o colocaram como peça-chave no novo ciclo da
+          franquia, sendo hoje o principal nome do time. </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

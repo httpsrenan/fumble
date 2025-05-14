@@ -1,96 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Dallas Cowboys </title>
+  <title>FUMBLE - Dallas Cowboys </title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/colts.png" >
-              <h1>DALLAS COWBOYS</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>Fundados em 1960, os Cowboys são a franquia mais valiosa da NFL e uma das mais populares do mundo. <br>
-                Conhecidos como "America’s Team", conquistaram cinco Super Bowls (VI, XII, XXVII, XXVIII, XXX) e dominaram a NFL em diferentes décadas. <br>
-                Desde os anos 90, vivem um jejum de títulos, mas continuam sendo protagonistas em termos de audiência, impacto e relevância. <br>
-                Dallas é sinônimo de grandeza, rivalidades intensas e uma história repleta de estrelas. </p>
-              
-            </div>
-        
-            <div style="background-color: #001d43; color: white;" class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Emmitt Smith (RB)</h2>
-                <p>Maior corredor da história da NFL com 18.355 jardas, Emmitt Smith foi o coração do ataque dos Cowboys tricampeões nos anos 90. MVP da liga em 1993, 
-                    era conhecido por sua durabilidade, visão e eficiência. <br>
-                    Jogou 13 temporadas em Dallas e entrou no Hall da Fama em 2010. <br>
-                    Seu nome é sinônimo de consistência e legado. </p>
-              </div>
-              <img src="jogadores_img/Emmitt_Smith_dallas.jpg" >
-            </div>
-        
-            <div style="background-color: white;" class="card-jogador">
-                <img src="jogadores_img/Micah_Parsons_dallas.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Micah Parsons (LB/Edge)</h2>
-                <p>Draftado em 2021, Micah Parsons rapidamente se tornou um dos defensores mais dominantes da liga. <br>
-                    Combinando velocidade, força e inteligência, é capaz de atuar tanto como linebacker tradicional quanto como pass rusher. <br>
-                    Já foi nomeado All-Pro e é o motor da defesa de Dallas, sendo considerado um dos melhores jogadores defensivos da NFL atual. </p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/colts.png">
+      <h1>DALLAS COWBOYS</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>Fundados em 1960, os Cowboys são a franquia mais valiosa da NFL e uma das mais populares do mundo. <br>
+        Conhecidos como "America’s Team", conquistaram cinco Super Bowls (VI, XII, XXVII, XXVIII, XXX) e dominaram a NFL
+        em diferentes décadas. <br>
+        Desde os anos 90, vivem um jejum de títulos, mas continuam sendo protagonistas em termos de audiência, impacto e
+        relevância. <br>
+        Dallas é sinônimo de grandeza, rivalidades intensas e uma história repleta de estrelas. </p>
+
+    </div>
+
+    <div style="background-color: #001d43; color: white;" class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Emmitt Smith (RB)</h2>
+        <p>Maior corredor da história da NFL com 18.355 jardas, Emmitt Smith foi o coração do ataque dos Cowboys
+          tricampeões nos anos 90. MVP da liga em 1993,
+          era conhecido por sua durabilidade, visão e eficiência. <br>
+          Jogou 13 temporadas em Dallas e entrou no Hall da Fama em 2010. <br>
+          Seu nome é sinônimo de consistência e legado. </p>
+      </div>
+      <img src="jogadores_img/Emmitt_Smith_dallas.jpg">
+    </div>
+
+    <div style="background-color: white;" class="card-jogador">
+      <img src="jogadores_img/Micah_Parsons_dallas.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Micah Parsons (LB/Edge)</h2>
+        <p>Draftado em 2021, Micah Parsons rapidamente se tornou um dos defensores mais dominantes da liga. <br>
+          Combinando velocidade, força e inteligência, é capaz de atuar tanto como linebacker tradicional quanto como
+          pass rusher. <br>
+          Já foi nomeado All-Pro e é o motor da defesa de Dallas, sendo considerado um dos melhores jogadores defensivos
+          da NFL atual. </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

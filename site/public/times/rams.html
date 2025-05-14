@@ -1,93 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Los Angeles Rams</title>
+  <title>FUMBLE - Los Angeles Rams</title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/rams.png" >
-              <h1>LOS ANGELES RAMS</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>Os Rams são uma das franquias mais tradicionais e versáteis da NFL. <br>
-                Fundados em 1936 em Cleveland, passaram por Los Angeles, St. Louis (onde venceram o Super Bowl XXXIV) e retornaram a LA em 2016. <br>
-                A equipe viveu diferentes eras de sucesso, com destaque para o ataque “Greatest Show on Turf” e, mais recentemente, o título do Super Bowl LVI, sob comando de Sean McVay. <br>
-                Conhecidos por sua abordagem agressiva e foco em estrelas, os Rams têm se mantido competitivos com um estilo moderno, criativo e ousado.</p>
-              
-            </div>
-        
-            <div style="background-color: #ffb500;" class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Aaron Donald (DT)</h2>
-                <p> Aaron Donald é amplamente considerado o defensor mais dominante da era moderna. <br>
-                    Com múltiplos prêmios de Jogador Defensivo do Ano, sua força, técnica e explosão interior redefiniram o papel de um defensive tackle na NFL.</p>
-              </div>
-              <img src="jogadores_img/Aaron_Donald_rams.jpg" >
-            </div>
-        
-            <div style="background-color: #013594; color: white;" class="card-jogador">
-                <img src="jogadores_img/Cooper_Kupp_rams.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Cooper Kupp (WR)</h2>
-                <p> J Cooper Kupp teve uma das maiores temporadas da história em 2021, vencendo a Tríplice Coroa (mais jardas, touchdowns e recepções). <br>
-                    Preciso nas rotas e com grande química com o QB, é uma das estrelas da liga.</p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/rams.png">
+      <h1>LOS ANGELES RAMS</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>Os Rams são uma das franquias mais tradicionais e versáteis da NFL. <br>
+        Fundados em 1936 em Cleveland, passaram por Los Angeles, St. Louis (onde venceram o Super Bowl XXXIV) e
+        retornaram a LA em 2016. <br>
+        A equipe viveu diferentes eras de sucesso, com destaque para o ataque “Greatest Show on Turf” e, mais
+        recentemente, o título do Super Bowl LVI, sob comando de Sean McVay. <br>
+        Conhecidos por sua abordagem agressiva e foco em estrelas, os Rams têm se mantido competitivos com um estilo
+        moderno, criativo e ousado.</p>
+
+    </div>
+
+    <div style="background-color: #ffb500;" class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Aaron Donald (DT)</h2>
+        <p> Aaron Donald é amplamente considerado o defensor mais dominante da era moderna. <br>
+          Com múltiplos prêmios de Jogador Defensivo do Ano, sua força, técnica e explosão interior redefiniram o papel
+          de um defensive tackle na NFL.</p>
+      </div>
+      <img src="jogadores_img/Aaron_Donald_rams.jpg">
+    </div>
+
+    <div style="background-color: #013594; color: white;" class="card-jogador">
+      <img src="jogadores_img/Cooper_Kupp_rams.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Cooper Kupp (WR)</h2>
+        <p> J Cooper Kupp teve uma das maiores temporadas da história em 2021, vencendo a Tríplice Coroa (mais jardas,
+          touchdowns e recepções). <br>
+          Preciso nas rotas e com grande química com o QB, é uma das estrelas da liga.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

@@ -1,97 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Kansas City Chiefs </title>
+  <title>FUMBLE - Kansas City Chiefs </title>
 
-    <link rel="stylesheet" href="times.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="../img/logo_fumle.png" />
+  <link rel="stylesheet" href="times.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" href="../img/logo_fumle.png" />
 </head>
+
 <body>
-    
-        <!--header inicio-->
-        <div class="header">
-            <div class="container">
-                <img src="../img/logo_fumle.png" width="85px">
-                <ul class="navbar">
-                    <li><a href="../index.html">Menu</li>
-                    <li><a href="../times.html">Times</a></li>
-                    <li><a href="../historia.html">História</a></li>
-                    <li><a href="regras.html">Regras</a></li>
-                    <li><a href="../noticias.html">Notícias</a></li>
-                    <li><button class="login" onclick="login()">Login</button></li>
-                    <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
-                </ul>
-            </div>
-        </div>
-        <!--header fim-->
 
-        <div class="container-time">
-    
-            <div class="header-time">
-              <img src="times_img/chiefs.png" >
-              <h1>KANSAS CITY CHIEFS</h1>
-            </div>
-        
-            <div class="descricao-time">
-              <p>Fundados em 1960 como Dallas Texans, os Chiefs se mudaram para Kansas City em 1963. <br>
-                Foram campeões da AFL e venceram o Super Bowl IV em 1970, mas viveram décadas de altos e baixos até a virada da década de 2020. <br>
-                Sob o comando do técnico Andy Reid e com Patrick Mahomes no comando do ataque, os Chiefs se tornaram uma dinastia moderna, com títulos no Super Bowl LIV (2019), 
-                LVII (2022) e LVIII (2023). <br>
-                Kansas City combina tradição com inovação ofensiva e atualmente é referência de excelência na NFL. </p>
-              
-            </div>
-        
-            <div style="background-color: #ff1135" class="card-jogador">
-              <div class="card-texto">
-                <h2>Maior jogador: Patrick Mahomes (QB)</h2>
-                <p>Ainda em plena atividade, Patrick Mahomes já é o maior jogador da história dos Chiefs. <br>
-                    Draftado em 2017, foi MVP da NFL em 2018 e 2022, além de vencer três Super Bowls como titular. <br>
-                    Mahomes revolucionou a posição de quarterback com sua criatividade, improvisação e força no braço. <br>
-                    É o símbolo da nova era da NFL e o pilar da dinastia que domina a liga nos últimos anos. </p>
-              </div>
-              <img src="jogadores_img/Mahomes1_chifs.jpg" >
-            </div>
-        
-            <div style="background-color: white;" class="card-jogador">
-                <img src="jogadores_img/Mahomes2_chifs.jpg" >
-              <div class="card-texto">
-                <h2>Principal jogador: Patrick Mahomes (QB)</h2>
-                <p> É impossível dissociar Mahomes do atual sucesso da franquia. <br>
-                    Sua leitura de jogo, frieza sob pressão e habilidade de produzir jogadas mágicas em qualquer situação fazem dele o melhor jogador da NFL hoje. <br>
-                    Ele é o rosto da liga e lidera um ataque sempre perigoso, mesmo com mudanças constantes de elenco ao seu redor. </p>
-              </div>
-            </div>
-        
-          </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
-                <div class="redes-sociais">
-                    <img src="../img/instax.png" alt="Instagram" width="30px">
-                    
-                </div>
-            </div>
-        </div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <img src="../img/logo_fumle.png" width="85px">
+      <ul class="navbar">
+        <li><a href="../index.html">Menu</li>
+        <li><a href="../times.html">Times</a></li>
+        <li><a href="../historia.html">História</a></li>
+        <li><a href="regras.html">Regras</a></li>
+        <li><a href="../noticias.html">Notícias</a></li>
+        <li><button class="login" onclick="login()">Login</button></li>
+        <li><button class="cadastro" onclick="cadastrar()">Cadastrar</button></li>
+      </ul>
     </div>
-</div>
-    <script>
-        function login(){
-    window.location.href = "../login.html"
-  }
+  </div>
+  <!--header fim-->
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
-    </script>
+  <div class="container-time">
+
+    <div class="header-time">
+      <img src="times_img/chiefs.png">
+      <h1>KANSAS CITY CHIEFS</h1>
+      <div onclick="favoritar(this)">
+        <span class="estrela">☆</span>
+        <span class="texto">Favoritar time</span>
+      </div>
+    </div>
+
+    <div class="descricao-time">
+      <p>Fundados em 1960 como Dallas Texans, os Chiefs se mudaram para Kansas City em 1963. <br>
+        Foram campeões da AFL e venceram o Super Bowl IV em 1970, mas viveram décadas de altos e baixos até a virada da
+        década de 2020. <br>
+        Sob o comando do técnico Andy Reid e com Patrick Mahomes no comando do ataque, os Chiefs se tornaram uma
+        dinastia moderna, com títulos no Super Bowl LIV (2019),
+        LVII (2022) e LVIII (2023). <br>
+        Kansas City combina tradição com inovação ofensiva e atualmente é referência de excelência na NFL. </p>
+
+    </div>
+
+    <div style="background-color: #ff1135" class="card-jogador">
+      <div class="card-texto">
+        <h2>Maior jogador: Patrick Mahomes (QB)</h2>
+        <p>Ainda em plena atividade, Patrick Mahomes já é o maior jogador da história dos Chiefs. <br>
+          Draftado em 2017, foi MVP da NFL em 2018 e 2022, além de vencer três Super Bowls como titular. <br>
+          Mahomes revolucionou a posição de quarterback com sua criatividade, improvisação e força no braço. <br>
+          É o símbolo da nova era da NFL e o pilar da dinastia que domina a liga nos últimos anos. </p>
+      </div>
+      <img src="jogadores_img/Mahomes1_chifs.jpg">
+    </div>
+
+    <div style="background-color: white;" class="card-jogador">
+      <img src="jogadores_img/Mahomes2_chifs.jpg">
+      <div class="card-texto">
+        <h2>Principal jogador: Patrick Mahomes (QB)</h2>
+        <p> É impossível dissociar Mahomes do atual sucesso da franquia. <br>
+          Sua leitura de jogo, frieza sob pressão e habilidade de produzir jogadas mágicas em qualquer situação fazem
+          dele o melhor jogador da NFL hoje. <br>
+          Ele é o rosto da liga e lidera um ataque sempre perigoso, mesmo com mudanças constantes de elenco ao seu
+          redor. </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!--footer inicio-->
+  <div class="footer">
+    <div class="container">
+      <div class="conteudo">
+        <img src="../img/logo_fumle.png" width="70px">
+        <div class="redes-sociais">
+          <img src="../img/instax.png" alt="Instagram" width="30px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    function login() {
+      window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+      window.location.href = "../cadastro.html"
+    }
+
+    function favoritar(elemento) {
+
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
+    }
+  </script>
 </body>
+
 </html>
 
 </body>
+
 </html>

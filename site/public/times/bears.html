@@ -36,7 +36,7 @@
     <div class="header-time">
       <img src="times_img/bears.png">
       <h1>CHICAGO BEARS</h1>
-      <div id="botaoFavorito">
+      <div onclick="favoritar(this)">
         <span class="estrela">☆</span>
         <span class="texto">Favoritar time</span>
       </div>
@@ -59,7 +59,8 @@
           <br>
           Correu para mais de 16 mil jardas na carreira, com uma combinação rara de agilidade, força e coração. <br>
           Ganhou o Super Bowl XX e é amplamente visto como o maior Bear de todos os tempos. <br>
-          Entrou no Hall da Fama em 1993 e deixou um legado humanitário duradouro. </p>
+          Entrou no Hall da Fama em 1993 e deixou um legado humanitário duradouro.
+        </p>
       </div>
       <img src="jogadores_img/Walter_Payton_bears.jpg">
     </div>
@@ -91,21 +92,21 @@
   </div>
   </div>
   <script>
-    function favoritar(div) {
-    // Acessa os elementos diretamente pelos índices (primeiro e segundo span)
-    var estrela = div.children[0];
-    var texto = div.children[1];
+    function favoritar(elemento) {
 
-    if (estrela.innerHTML === '☆') {
-      estrela.innerHTML = '★';
-      estrela.style.color = 'gold';
-      texto.innerHTML = 'Time favoritado';
-    } else {
-      estrela.innerHTML = '☆';
-      estrela.style.color = 'gray';
-      texto.innerHTML = 'Favoritar time';
+      var estrela = elemento.getElementsByTagName("span")[0];
+      var texto = elemento.getElementsByTagName("span")[1];
+
+      if (estrela.innerHTML === '☆') {
+        estrela.innerHTML = '★';
+        estrela.style.color = 'gold';
+        texto.innerHTML = 'Time favoritado';
+      } else {
+        estrela.innerHTML = '☆';
+        estrela.style.color = 'gray';
+        texto.innerHTML = 'Favoritar time';
+      }
     }
-  }
     function login() {
       window.location.href = "../login.html"
     }
@@ -115,4 +116,3 @@
     }
   </script>
 </body>
-
