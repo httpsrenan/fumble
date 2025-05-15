@@ -36,7 +36,7 @@
     <div class="header-time">
       <img src="times_img/tampa.png">
       <h1>TAMPA BAY BUCCANEERS</h1>
-      <div onclick="favoritar(this)">
+      <div onclick="favoritar(this, 28)">
         <span class="estrela">☆</span>
         <span class="texto">Favoritar time</span>
       </div>
@@ -102,12 +102,38 @@
       window.location.href = "../cadastro.html"
     }
 
-    function favoritar(elemento) {
+    window.onload = function () {
+    var idUsuario = sessionStorage.ID_USUARIO;
+    var idTime = 28; 
 
+    fetch(`/favorito/verificar/${idUsuario}/${idTime}`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.favoritado) {
+                var elemento = document.querySelector(".estrela").parentElement;
+                var estrela = elemento.getElementsByTagName("span")[0];
+                var texto = elemento.getElementsByTagName("span")[1];
+                
+                estrela.innerHTML = '★';
+                estrela.style.color = 'gold';
+                texto.innerHTML = 'Time favoritado';
+            }
+        });
+}
+
+    function favoritar(elemento, idTime) {
       var estrela = elemento.getElementsByTagName("span")[0];
       var texto = elemento.getElementsByTagName("span")[1];
 
-      if (estrela.innerHTML === '☆') {
+      var favoritar = estrela.innerHTML === '☆';
+      var idUsuario = sessionStorage.ID_USUARIO;
+
+      if (isNaN(idUsuario) || isNaN(idTime)) {
+        return res.status(400).json("IDs inválidos");
+      }
+
+      // Atualiza a interface
+      if (favoritar) {
         estrela.innerHTML = '★';
         estrela.style.color = 'gold';
         texto.innerHTML = 'Time favoritado';
@@ -116,6 +142,23 @@
         estrela.style.color = 'gray';
         texto.innerHTML = 'Favoritar time';
       }
+
+      
+      fetch("/favorito/atualizar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          idUsuario: idUsuario,
+          idTime: idTime,
+          favoritar: favoritar
+        })
+      })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.error("Erro ao favoritar:", err));
+
     }
   </script>
 </body>
