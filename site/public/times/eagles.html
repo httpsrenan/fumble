@@ -124,7 +124,9 @@
       var idUsuario = sessionStorage.ID_USUARIO;
 
       if (isNaN(idUsuario) || isNaN(idTime)) {
-        return res.status(400).json("IDs inválidos");
+        alert("Você precisa estar logado para favoritar!");
+        window.location.href = "../cadastro.html";
+        return;
       }
 
       // Atualiza a interface

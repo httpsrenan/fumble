@@ -100,23 +100,23 @@
     }
 
     window.onload = function () {
-    var idUsuario = sessionStorage.ID_USUARIO;
-    var idTime = 31; 
+      var idUsuario = sessionStorage.ID_USUARIO;
+      var idTime = 31;
 
-    fetch(`/favorito/verificar/${idUsuario}/${idTime}`)
+      fetch(`/favorito/verificar/${idUsuario}/${idTime}`)
         .then(res => res.json())
         .then(data => {
-            if (data.favoritado) {
-                var elemento = document.querySelector(".estrela").parentElement;
-                var estrela = elemento.getElementsByTagName("span")[0];
-                var texto = elemento.getElementsByTagName("span")[1];
-                
-                estrela.innerHTML = '★';
-                estrela.style.color = 'gold';
-                texto.innerHTML = 'Time favoritado';
-            }
+          if (data.favoritado) {
+            var elemento = document.querySelector(".estrela").parentElement;
+            var estrela = elemento.getElementsByTagName("span")[0];
+            var texto = elemento.getElementsByTagName("span")[1];
+
+            estrela.innerHTML = '★';
+            estrela.style.color = 'gold';
+            texto.innerHTML = 'Time favoritado';
+          }
         });
-}
+    }
 
     function favoritar(elemento, idTime) {
       var estrela = elemento.getElementsByTagName("span")[0];
@@ -126,11 +126,13 @@
       var idUsuario = sessionStorage.ID_USUARIO;
 
       if (isNaN(idUsuario) || isNaN(idTime)) {
-        return res.status(400).json("IDs inválidos");
+        alert("Você precisa estar logado para favoritar!");
+        window.location.href = "../cadastro.html";
+        return;
       }
 
       // Atualiza a interface
-      if (favoritar) {
+       if (favoritar) {
         estrela.innerHTML = '★';
         estrela.style.color = 'gold';
         texto.innerHTML = 'Time favoritado';
@@ -140,7 +142,7 @@
         texto.innerHTML = 'Favoritar time';
       }
 
-      
+
       fetch("/favorito/atualizar", {
         method: "POST",
         headers: {

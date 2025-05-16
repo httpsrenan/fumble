@@ -74,7 +74,7 @@
       <p>Conheça todos os 32 times da NFL, suas histórias, jogador historicos, melhor jogador atual e as conferências a
         que pertencem.
         Descubra qual mais combina com você e comece a torcer com paixão!</p>
-      <a href="times.html" class="btn">Ver Times</a>
+      <button onclick="paralogin(1)"class="btn">Ver Times</button>
     </div>
     <div class="card">
       <img src="img/nfl_branco.png">
@@ -82,7 +82,7 @@
       <p>Da origem humilde nos anos 1920 ao espetáculo global que é hoje, a NFL tem uma trajetória cheia de
         curiosidades, evoluções e conquistas.
         Aprenda sobre as regras, a evolução do jogo e os momentos mais marcantes da liga.</p>
-      <a href="historia.html" class="btn">Ver História</a>
+      <button onclick="paralogin(2)"class="btn">Ver História</button>
     </div>
     <div class="card">
       <img src="img/regras.png" width="200px">
@@ -90,7 +90,7 @@
       <p>Entenda as regras básicas da NFL e como funciona o jogo: pontuação, posições, faltas e principais jogadas.
         Ideal para quem está começando ou
         quer curtir ainda mais cada partida com conhecimento!</p>
-      <a href="regras.html" class="btn">Ver Regras</a>
+        <button onclick="paralogin(3)"class="btn">Ver Regras</button>
     </div>
     <div class="card">
       <img src="img/jornal.png">
@@ -98,7 +98,7 @@
       <p>Fique por dentro das últimas novidades da NFL: transferências, lesões, jogos decisivos, bastidores e tudo que
         está movimentando o mundo do futebol americano.
         Informação rápida e confiável para quem é fã de verdade!</p>
-      <a href="noticias.html" class="btn">Ver Notícias</a>
+      <button onclick="paralogin(4)"class="btn">Ver Notícias</button>
     </div>
   </section>
   <!--cards fim-->
@@ -123,6 +123,24 @@
 
   function cadastrar() {
     window.location.href = "cadastro.html"
+  }
+
+  function paralogin(url){
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    if(!idUsuario){
+      alert("Se logue para ver mais!");
+      window.location.href = "cadastro.html";
+      return;
+    }else if(url == 1){
+      window.location.href = "times.html";
+    }else if(url == 2){
+      window.location.href = "historia.html";
+    }else if(url == 3){
+      window.location.href = "regras.html";
+    }else{
+      window.location.href = "noticias.html";
+    }
   }
 </script>
 
