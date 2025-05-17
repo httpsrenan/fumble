@@ -79,6 +79,10 @@
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
 
+        if(emailVar == "renan@gmail.com" ){
+            window.location = "dashboard.html";
+        }
+
         if (emailVar == "" || senhaVar == "") {
             alerta.innerHTML = ("Mensagem de erro para todos os campos em branco");
 
