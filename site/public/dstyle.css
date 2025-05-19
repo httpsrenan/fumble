@@ -86,15 +86,30 @@ body {
 /*DASH*/
 .graficos-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; 
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
   }
 
   .grafico {
-    width: 650px;
-    height: 300px;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 12px;
+    width: 45%;
+    min-width: 300px;
+    max-width: 600px;
+    box-shadow: 0 0 10px #000;
   }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+h1{
+  padding-left: 200px;
+}
 
 
 /*FOOTER*/

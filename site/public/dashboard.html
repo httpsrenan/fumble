@@ -26,37 +26,37 @@
                 <li><a href="regras.html">Regras</a></li>
                 <li><a href="noticias.html">Notícias</a></li>
                 <li><button class="login" onclick="login()">Login</button></li>
-                <li><button class="cadastro">Cadastrar</button></li>
+                <li><button class="cadastro"  onclick="cadastro()">Cadastrar</button></li>
             </ul>
         </div>
     </div>
 
     <!--header fim-->
 
-    <h1 style="color: white;">Dashboard de Favoritos</h1>
+    <h1 style="color: white;">Dashboard de Controle</h1>
 
     <div class="graficos-container">
 
         <div class="grafico">
-            <h2 style="color: white;">🔝 10 Times mais favoritados</h2>
+            <h2 style="color: white;"> ↑ 10 Times mais favoritados</h2>
             <canvas id="graficoMaisFavoritados"></canvas>
         </div>
 
         <div class="grafico">
-            <h2 style="color: white;">🔻 10 Times menos favoritados</h2>
+            <h2 style="color: white;"> ↓ 10 Times menos favoritados</h2>
             <canvas id="graficoMenosFavoritados"></canvas>
         </div>
         
         <br><br><br>
 
         <div class="grafico">
-            <h2 style="color: white;">👥 5 Usuários que mais favoritaram times</h2>
+            <h2 style="color: white;"> 5 Usuários que mais favoritaram times</h2>
             <canvas id="graficoUsuariosMaisFavoritaram" ></canvas>
         </div>
 
-        <div class="grafico">
-            <h2 style="color: white;">🏈 Distribuição de favoritos por conferência</h2>
-            <canvas id="graficoPorConferencia"></canvas>
+        <div class="grafico" style="max-width: 500px; max-height: 500px;">
+            <h2 style="color: white;">AFC X NFC</h2>
+            <canvas id="conferencia" style="max-width: 500px; max-height: 400px;"></canvas>
         </div>
 
 
@@ -72,6 +72,14 @@
 
 </body>
 <script>
+    function login() {
+        window.location.href = "login.html"
+    }
+
+    function cadastrar() {
+        window.location.href = "cadastro.html"
+    }
+
     async function gerarGraficos() {
 
         const dadosMais = await fetch("/dashboard/mais-favoritados").then(res => res.json());
@@ -116,18 +124,16 @@
 
 
         const dadosConferencia = await fetch("/dashboard/favoritos-por-conferencia").then(res => res.json());
-        new Chart(document.getElementById("graficoPorConferencia"), {
+        new Chart(document.getElementById("conferencia"), {
             type: "pie",
             data: {
                 labels: dadosConferencia.map(item => item.conferencia),
                 datasets: [{
-                    label: "Favoritos por conferência",
+                    label: "AFC X NFC",
                     data: dadosConferencia.map(item => item.total_favoritos),
                     backgroundColor: [
-                        "rgba(255, 206, 86, 0.6)",
-                        "rgba(153, 102, 255, 0.6)",
-                        "rgba(255, 159, 64, 0.6)",
-                        "rgba(99, 255, 132, 0.6)"
+                        "#d10e1e",
+                        "#003a68"
                     ]
                 }]
             }
