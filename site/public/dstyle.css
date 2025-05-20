@@ -84,6 +84,36 @@ body {
 }
 
 /*DASH*/
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: black;
+}
+
+.dashboard-header h1 {
+  color: white;
+  font-size: 28px;
+  margin-right: 32px;
+  margin: 0;
+}
+
+.kpi-card {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.kpi-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
 .graficos-container {
     display: flex;
     flex-wrap: wrap;
@@ -103,8 +133,8 @@ body {
   }
 
   canvas {
-    width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    height: auto;
   }
 
 h1{

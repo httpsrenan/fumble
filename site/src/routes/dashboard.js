@@ -2,6 +2,10 @@ var express = require("express");
 var router = express.Router();
 var dashboardController = require("../controllers/dashboardController");
 
+router.get("/total-favoritos", dashboardController.getTotalFavoritos);
+
+router.get("/total-usuarios", dashboardController.getTotalUsuarios);
+
 router.get("/mais-favoritados", dashboardController.getTop10MaisFavoritados);
 
 router.get("/menos-favoritados", dashboardController.getTop10MenosFavoritados);

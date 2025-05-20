@@ -20,22 +20,40 @@
         <div class="container">
             <img src="img/logo_fumle.png" width="85px">
             <ul class="navbar">
-                <li><a href="index.html">Menu</li>
+                <li><a href="index.html">Menu</a></li>
                 <li><a href="times.html">Times</a></li>
                 <li><a href="historia.html">História</a></li>
                 <li><a href="regras.html">Regras</a></li>
                 <li><a href="noticias.html">Notícias</a></li>
                 <li><button class="login" onclick="login()">Login</button></li>
-                <li><button class="cadastro"  onclick="cadastro()">Cadastrar</button></li>
+                <li><button class="cadastro" onclick="cadastro()">Cadastrar</button></li>
             </ul>
         </div>
     </div>
 
     <!--header fim-->
 
-    <h1 style="color: white;">Dashboard de Controle</h1>
+    <div class="dashboard-header">
+        <h1 style="color: white;">Dashboard de Controle</h1>
+
+        <div class="kpi-card" id="kpi-total-favoritos">
+            <div class="kpi-content">
+                <div class="kpi-label">Total de Favoritos</div>
+                <div class="kpi-value">0</div>
+            </div>
+        </div>
+
+        <div class="kpi-card" id="kpi-total-usuarios">
+            <div class="kpi-content">
+                <div class="kpi-label">Usuários Registrados</div>
+                <div class="kpi-value">0</div>
+            </div>
+        </div>
+
+    </div>
 
     <div class="graficos-container">
+
 
         <div class="grafico">
             <h2 style="color: white;"> ↑ 10 Times mais favoritados</h2>
@@ -46,17 +64,17 @@
             <h2 style="color: white;"> ↓ 10 Times menos favoritados</h2>
             <canvas id="graficoMenosFavoritados"></canvas>
         </div>
-        
+
         <br><br><br>
 
         <div class="grafico">
             <h2 style="color: white;"> 5 Usuários que mais favoritaram times</h2>
-            <canvas id="graficoUsuariosMaisFavoritaram" ></canvas>
+            <canvas id="graficoUsuariosMaisFavoritaram"></canvas>
         </div>
 
         <div class="grafico" style="max-width: 500px; max-height: 500px;">
             <h2 style="color: white;">AFC X NFC</h2>
-            <canvas id="conferencia" style="max-width: 500px; max-height: 400px;"></canvas>
+            <canvas id="conferencia" style="max-width: 700px; max-height: 400px;"></canvas>
         </div>
 
 
@@ -80,67 +98,175 @@
         window.location.href = "cadastro.html"
     }
 
-    async function gerarGraficos() {
+    let proximaAtualizacao = null;
 
-        const dadosMais = await fetch("/dashboard/mais-favoritados").then(res => res.json());
-        new Chart(document.getElementById("graficoMaisFavoritados"), {
-            type: "bar",
-            data: {
-                labels: dadosMais.map(item => item.nome),
-                datasets: [{
-                    label: "Favoritos",
-                    data: dadosMais.map(item => item.total_favoritos),
-                    backgroundColor: "rgba(75, 192, 192, 0.6)"
-                }]
-            }
-        });
+    function carregarKPIs() {
+        if (proximaAtualizacao !== undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
 
-        const dadosMenos = await fetch("/dashboard/menos-favoritados").then(res => res.json());
-        new Chart(document.getElementById("graficoMenosFavoritados"), {
-            type: "bar",
-            data: {
-                labels: dadosMenos.map(item => item.nome),
-                datasets: [{
-                    label: "Favoritos",
-                    data: dadosMenos.map(item => item.total_favoritos),
-                    backgroundColor: "rgba(255, 99, 132, 0.6)"
-                }]
-            }
-        });
+        // KPI 1: Total de Favoritos
+        fetch('/dashboard/total-favoritos', { cache: 'no-store' })
+            .then(response => {
+                if (response.ok) {
+                    response.json().then(data => {
+                        document.getElementById('kpi-total-favoritos').querySelector('.kpi-value').textContent =
+                            data.total.toLocaleString();
+                    });
+                }
+            })
+            .catch(error => console.error('Erro ao obter total de favoritos:', error));
 
-
-        const dadosUsuarios = await fetch("/dashboard/usuarios-mais-favoritaram").then(res => res.json());
-        new Chart(document.getElementById("graficoUsuariosMaisFavoritaram"), {
-            type: "bar",
-            data: {
-                labels: dadosUsuarios.map(item => item.nome),
-                datasets: [{
-                    label: "Favoritos realizados",
-                    data: dadosUsuarios.map(item => item.total_favoritos),
-                    backgroundColor: "rgba(54, 162, 235, 0.6)"
-                }]
-            }
-        });
+        // KPI 2: Total de Usuários
+        fetch('/dashboard/total-usuarios', { cache: 'no-store' })
+            .then(response => {
+                if (response.ok) {
+                    response.json().then(data => {
+                        document.getElementById('kpi-total-usuarios').querySelector('.kpi-value').textContent =
+                            data.total.toLocaleString();
+                    });
+                }
+            })
+            .catch(error => console.error('Erro ao obter total de usuários:', error));
 
 
-        const dadosConferencia = await fetch("/dashboard/favoritos-por-conferencia").then(res => res.json());
-        new Chart(document.getElementById("conferencia"), {
-            type: "pie",
-            data: {
-                labels: dadosConferencia.map(item => item.conferencia),
-                datasets: [{
-                    label: "AFC X NFC",
-                    data: dadosConferencia.map(item => item.total_favoritos),
-                    backgroundColor: [
-                        "#d10e1e",
-                        "#003a68"
-                    ]
-                }]
-            }
-        });
+        // Atualiza a cada 30 segundos
+        proximaAtualizacao = setTimeout(carregarKPIs, 30000);
     }
 
-    gerarGraficos();
+    // Inicializa tudo quando o DOM estiver pronto
+    document.addEventListener('DOMContentLoaded', function () {
+        gerarGraficos();
+        carregarKPIs();
+    });
+
+    const charts = {};
+
+    function obterDadosGrafico(tipoGrafico, elementoId, configGrafico) {
+        if (proximaAtualizacao !== undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/dashboard/${tipoGrafico}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos para ${tipoGrafico}: ${JSON.stringify(resposta)}`);
+                        plotarGrafico(resposta, elementoId, configGrafico);
+                    });
+                } else {
+                    console.error(`Nenhum dado encontrado ou erro na API para ${tipoGrafico}`);
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para ${tipoGrafico}: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(dados, elementoId, configGrafico) {
+        console.log(`Iniciando plotagem do gráfico ${elementoId}...`);
+
+        // Destruir o gráfico anterior, se existir
+        if (charts[elementoId]) {
+            charts[elementoId].destroy();
+        }
+
+        // Processar dados
+        const labels = [];
+        const valores = [];
+
+        for (let i = 0; i < dados.length; i++) {
+            labels.push(dados[i].nome || dados[i].conferencia);
+            valores.push(dados[i].total_favoritos);
+        }
+
+        // Configurar gráfico
+        const config = {
+            type: configGrafico.type,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: configGrafico.label,
+                    data: valores,
+                    backgroundColor: configGrafico.backgroundColor,
+                    borderColor: configGrafico.borderColor,
+                    tension: 0.1
+                }]
+            },
+            options: configGrafico.options || {}
+        };
+
+        console.log('----------------------------------------------');
+        console.log(`Configuração do gráfico ${elementoId}:`);
+        console.log(config);
+        console.log('----------------------------------------------');
+
+        // Criar gráfico e armazenar no objeto global
+        const ctx = document.getElementById(elementoId);
+        charts[elementoId] = new Chart(ctx, config);
+    }
+
+    function gerarGraficos() {
+        // Gráfico de times mais favoritados
+        obterDadosGrafico(
+            'mais-favoritados',
+            'graficoMaisFavoritados',
+            {
+                type: 'bar',
+                label: 'Favoritos',
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgb(75, 192, 192)'
+            }
+        );
+
+        // Gráfico de times menos favoritados
+        obterDadosGrafico(
+            'menos-favoritados',
+            'graficoMenosFavoritados',
+            {
+                type: 'bar',
+                label: 'Favoritos',
+                backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                borderColor: 'rgb(255, 99, 132)'
+            }
+        );
+
+        // Gráfico de usuários que mais favoritaram
+        obterDadosGrafico(
+            'usuarios-mais-favoritaram',
+            'graficoUsuariosMaisFavoritaram',
+            {
+                type: 'bar',
+                label: 'Favoritos realizados',
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgb(54, 162, 235)'
+            }
+        );
+
+        // Gráfico de favoritos por conferência
+        obterDadosGrafico(
+            'favoritos-por-conferencia',
+            'conferencia',
+            {
+                type: 'pie',
+                label: 'AFC X NFC',
+                backgroundColor: ['#d10e1e', '#003a68'],
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            }
+        );
+    }
+
+    // Inicializa os gráficos quando o DOM estiver pronto
+    document.addEventListener('DOMContentLoaded', function () {
+        gerarGraficos();
+    });
 </script>
 
 </html>
