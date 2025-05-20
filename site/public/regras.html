@@ -19,6 +19,7 @@
         <div class="container">
             <img src="img/logo_fumle.png" width="85px">
             <ul class="navbar">
+                <li id="dash"></li>
                 <li><a href="index.html">Menu</li>
                 <li><a href="times.html">Times</a></li>
                 <li><a href="historia.html">História</a></li>
@@ -353,8 +354,10 @@
             <p>Última linha da defesa. Protegem contra passes profundos e auxiliam no jogo corrido.<br>
                 <span>Destaques: Antoine Winfield Jr (Buccaneers), Kyle Hamilton (Ravens), Minkah Fitzpatrick
                     (Steelers), Derwin James (Chargers), Kevin Byard (Bears).</span>
-            </p>
-
+            </p> <br><br>
+            <span>Foto: ge.globo <br>
+                Fonte: wikipedia, ge.globo e espn
+            </span>
         </div>
 
     </div>
@@ -373,6 +376,10 @@
 </div>
 </div>
 <script>
+          if(sessionStorage.ID_USUARIO == 1) 
+    dash.innerHTML = '<a href="dashboard.html">Dashboard</a>';
+  
+
     function login() {
         window.location.href = "login.html"
     }

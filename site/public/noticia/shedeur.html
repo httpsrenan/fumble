@@ -19,6 +19,7 @@
         <div class="container">
             <img src="../img/logo_fumle.png" width="85px">
             <ul class="navbar">
+                <li id="dash"></li>
                 <li><a href="../index.html">Menu</li>
                 <li><a href="../times.html">Times</a></li>
                 <li><a href="../historia.html">História</a></li>
@@ -54,7 +55,10 @@
                 Apesar disso, o estilo de jogo do QB tem gerado críticas. Especialistas apontam sua mobilidade limitada e a tendência de segurar demais a bola no pocket como fatores que 
                 prejudicaram seu valor no Draft.</p>
           </div>
-        </div>
+          <br><br><br>
+
+        <span> Fonte: Espn </span>
+        </div> 
       
 
     <!--footer inicio-->
@@ -73,6 +77,9 @@
     </div>
 </body>
 <script>
+    if(sessionStorage.ID_USUARIO == 1) 
+    dash.innerHTML = '<a href="../dashboard.html">Dashboard</a>';
+
     function login(){
     window.location.href = "../login.html"
   }

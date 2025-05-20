@@ -120,6 +120,11 @@ body {
     color: white;
   }
 
+  .noticia-container span{
+  font-size: 0.8em;
+  color: white;
+}
+
 /*FOOTER*/
 
 .footer {

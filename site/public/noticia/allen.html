@@ -19,6 +19,7 @@
         <div class="container">
             <img src="../img/logo_fumle.png" width="85px">
             <ul class="navbar">
+                <li id="dash"></li>
                 <li><a href="../index.html">Menu</li>
                 <li><a href="../times.html">Times</a></li>
                 <li><a href="../historia.html">História</a></li>
@@ -63,8 +64,10 @@
                 Escolhido na 7ª posição do Draft de 2018, Josh Allen também entrou para um seleto grupo de MVPs que não foram escolhidos para o time All-Pro da temporada. <br>
                 Desde a criação do prêmio, em 1957, apenas John Elway (1987) e Steve McNair (2003) conseguiram tal feito.</p>
           </div>
-        </div>
-      
+          <br><br><br>
+
+        <span> Fonte: Espn </span>
+        </div> 
 
     <!--footer inicio-->
 
@@ -82,6 +85,9 @@
     </div>
 </body>
 <script>
+          if(sessionStorage.ID_USUARIO == 1) 
+    dash.innerHTML = '<a href="../dashboard.html">Dashboard</a>';
+  
     function login(){
     window.location.href = "../login.html"
   }

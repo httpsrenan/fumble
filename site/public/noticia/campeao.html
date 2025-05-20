@@ -19,6 +19,7 @@
         <div class="container">
             <img src="../img/logo_fumle.png" width="85px">
             <ul class="navbar">
+                <li id="dash"></li>
                 <li><a href="../index.html">Menu</li>
                 <li><a href="../times.html">Times</a></li>
                 <li><a href="../historia.html">História</a></li>
@@ -56,9 +57,11 @@
                 
                 Aos 28 anos, Barkley acumula 7.216 jardas terrestres e 48 touchdowns ao longo de sete temporadas entre New York Giants e Philadelphia Eagles. <br>
                 Na última temporada, foi eleito para o terceiro Pro Bowl da carreira, entrou no time principal do All-Pro e ainda levou o prêmio de Jogador Ofensivo do Ano da NFL.</p>
-          </div>
-        </div>
-      
+          </div> 
+          <br><br><br>
+
+        <span> Fonte: Espn </span>
+        </div> 
 
     <!--footer inicio-->
 
@@ -76,6 +79,9 @@
     </div>
 </body>
 <script>
+          if(sessionStorage.ID_USUARIO == 1) 
+    dash.innerHTML = '<a href="../dashboard.html">Dashboard</a>';
+  
     function login(){
     window.location.href = "../login.html"
   }

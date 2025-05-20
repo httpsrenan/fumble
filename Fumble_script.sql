@@ -93,60 +93,72 @@ INSERT INTO times (nome, apelido, estado, fk_divisao) VALUES
 
 -- Inserindo usuários 
 INSERT INTO usuarios (email, nome, senha) VALUES
+('renan@gmail.com', 'Renan', '123'),
 ('tom.brady@example.com', 'Tom Brady', '123456'),
 ('patrick.mahomes@example.com', 'Patrick Mahomes', '123456'),
-('joe.burrow@example.com', 'Joe Burrow', '123456'), 
-('justin.jefferson@example.com', 'Justin Jefferson', '123456'), 
-('jalen.hurts@example.com', 'Jalen Hurts', '123456'), 
+('joe.burrow@example.com', 'Joe Burrow', '123456'),
+('justin.jefferson@example.com', 'Justin Jefferson', '123456'),
+('jalen.hurts@example.com', 'Jalen Hurts', '123456'),
 ('lamar.jackson@example.com', 'Lamar Jackson', '123456'),
-('josh.allen@example.com', 'Josh Allen', '123456'), 
-('aaron.donald@example.com', 'Aaron Donald', '123456'), 
+('josh.allen@example.com', 'Josh Allen', '123456'),
+('aaron.donald@example.com', 'Aaron Donald', '123456'),
 ('tyreek.hill@example.com', 'Tyreek Hill', '123456'),
-('miles.garrett@example.com', 'Myles Garrett', '123456'), 
-('davante.adams@example.com', 'Davante Adams', '123456'), 
-('cooper.kupp@example.com', 'Cooper Kupp', '123456'), 
-('dk.metcalf@example.com', 'DK Metcalf', '123456'), 
-('trevor.lawrence@example.com', 'Trevor Lawrence', '123456'), 
+('miles.garrett@example.com', 'Myles Garrett', '123456'),
+('davante.adams@example.com', 'Davante Adams', '123456'),
+('cooper.kupp@example.com', 'Cooper Kupp', '123456'),
+('dk.metcalf@example.com', 'DK Metcalf', '123456'),
+('trevor.lawrence@example.com', 'Trevor Lawrence', '123456'),
 ('nick.bosa@example.com', 'Nick Bosa', '123456'),
 ('micah.parsons@example.com', 'Micah Parsons', '123456'),
-('derrick.henry@example.com', 'Derrick Henry', '123456'), 
+('derrick.henry@example.com', 'Derrick Henry', '123456'),
 ('deebo.samuels@example.com', 'Deebo Samuel', '123456'),
 ('kirk.cousins@example.com', 'Kirk Cousins', '123456'),
-('chris.godwin@example.com', 'Chris Godwin', '123456');
+('chris.godwin@example.com', 'Chris Godwin', '123456'),
+('ricardo@gmail.com', 'Ricardo', '123'),
+('ricardinho@gmail.com', 'Ricardinho', '123'),
+('renata@gmail.com', 'Renata', '123'),
+('anna@gmail.com', 'Anna', '123');
 
 -- Inserindo favoritos 
 INSERT INTO favoritar (fk_usuario, fk_time) VALUES
-(1, 3),   
-(1, 30),  
-(2, 14),  
-(2, 17), 
-(3, 6),  
-(3, 7),  
-(4, 24),  
-(4, 19),  
-(5, 19),  
-(5, 20),  
-(6, 5),   
-(6, 2),   
-(7, 1),   
-(7, 4),  
-(8, 30),  
-(8, 29),  
-(9, 20),  
-(9, 2),   
-(10, 8),  
-(10, 6),  
-(11, 14), 
-(11, 15), 
-(12, 29), 
-(12, 30), 
-(13, 32), 
-(13, 28), 
-(14, 11), 
-(14, 3),  
-(15, 28), 
-(15, 30); 
+(9,8),(9,14),(9,24),
+(25,12),(25,16),(25,17),(25,2),(25,28),
+(21,11),(21,18),
+(13,9),(13,15),(13,26),
+(12,9),(12,15),(12,26),
+(19,1),(19,17),(19,29),
+(18,1),(18,16),(18,29),
+(14,9),(14,15),(14,27),
+(6,6),(6,13),(6,23),
+(4,4),(4,13),(4,22),
+(8,8),(8,14),(8,24),
+(5,5),(5,13),(5,22),
+(20,11),(20,17),
+(7,7),(7,14),(7,23),
+(17,1),(17,16),(17,28),
+(11,8),(11,14),(11,25),
+(16,1),(16,15),(16,28),
+(3,3),(3,13),(3,21),
+(1,1),(1,12),(1,2),(1,28),
+(24,12),(24,19),
+(23,11),(23,19),(23,28),
+(22,11),(22,18),(22,28),
+(2,2),(2,12),(2,21),
+(15,9),(15,15),(15,27),
+(10,8),(10,14),(10,25);
 
-select u.*, t.* from usuarios u 
+select * from usuarios;
+
+
+select fk_usuario, fk_time  from usuarios u 
 inner join favoritar on u.id = fk_usuario
 inner join times t on t.id = fk_time;
+
+SELECT 
+    (SELECT COUNT(f1.fk_time) FROM favoritar f1) / 
+    (SELECT COUNT(DISTINCT f2.fk_usuario) FROM favoritar f2 WHERE (SELECT COUNT(*) FROM favoritar) > 0) AS media
+FROM favoritar
+LIMIT 1;
+
+select count(f.fk_time) / count(distinct f.fk_usuario) as media_favoritos_por_usuario
+from favoritar f;

@@ -19,6 +19,7 @@
         <div class="container">
             <img src="img/logo_fumle.png" width="85px">
             <ul class="navbar">
+                <li id="dash"></li>
                 <li><a href="index.html">Menu</li>
                 <li><a href="times.html">Times</a></li>
                 <li><a href="historia.html">História</a></li>
@@ -70,6 +71,9 @@
 </div>
 </div>
 <script>
+    if(sessionStorage.ID_USUARIO == 1) 
+    dash.innerHTML = '<a href="dashboard.html">Dashboard</a>';
+
     function cadastrar() {
         window.location.href = "cadastro.html"
     }
@@ -79,9 +83,6 @@
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
 
-        if(emailVar == "renan@gmail.com" ){
-            window.location = "dashboard.html";
-        }
 
         if (emailVar == "" || senhaVar == "") {
             alerta.innerHTML = ("Mensagem de erro para todos os campos em branco");
