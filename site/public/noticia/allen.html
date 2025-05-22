@@ -19,6 +19,7 @@
         <div class="container">
             <img src="../img/logo_fumle.png" width="85px">
             <ul class="navbar">
+                <li id="hello"></li>
                 <li id="dash"></li>
                 <li><a href="../index.html">Menu</li>
                 <li><a href="../times.html">Times</a></li>
@@ -33,41 +34,52 @@
 
     <!--header fim-->
 
-    
-        <div class="noticia-container">
-          <h1 class="titulo-noticia">MVP da NFL, Josh Allen assina renovação de quase R$ 2 bilhões com os Bills em contrato até 2030</h1>
-          <img src="img/allen.png" class="imagem-noticia">
-          <div class="conteudo-noticia">
-            <p>O Buffalo Bills acertou uma renovação bombástica com Josh Allen, eleito MVP da última temporada da NFL. <br>
-                O quarterback assinou por mais seis anos com um valor total de US$ 330 milhões (cerca de R$ 1,9 bilhão), dos quais US$ 250 milhões (R$ 1,4 bilhão) são garantidos, 
+
+    <div class="noticia-container">
+        <h1 class="titulo-noticia">MVP da NFL, Josh Allen assina renovação de quase R$ 2 bilhões com os Bills em
+            contrato até 2030</h1>
+        <img src="img/allen.png" class="imagem-noticia">
+        <div class="conteudo-noticia">
+            <p>O Buffalo Bills acertou uma renovação bombástica com Josh Allen, eleito MVP da última temporada da NFL.
+                <br>
+                O quarterback assinou por mais seis anos com um valor total de US$ 330 milhões (cerca de R$ 1,9 bilhão),
+                dos quais US$ 250 milhões (R$ 1,4 bilhão) são garantidos,
                 segundo informações da ESPN. <br><br>
 
-                Com isso, Allen passa a ter o maior contrato garantido da história da NFL, superando o recorde anterior de Deshaun Watson, que recebeu US$ 230 milhões do Cleveland Browns. <br>
-                A extensão, válida até 2030, projeta Allen para receber US$ 55 milhões por ano — atrás apenas de Dak Prescott, do Dallas Cowboys, que lidera com US$ 60 milhões anuais. <br><br>
-                
+                Com isso, Allen passa a ter o maior contrato garantido da história da NFL, superando o recorde anterior
+                de Deshaun Watson, que recebeu US$ 230 milhões do Cleveland Browns. <br>
+                A extensão, válida até 2030, projeta Allen para receber US$ 55 milhões por ano — atrás apenas de Dak
+                Prescott, do Dallas Cowboys, que lidera com US$ 60 milhões anuais. <br><br>
+
                 Atualmente com contrato até 2028, Allen terá 34 anos no início do último ano do novo vínculo. <br><br>
-                
+
                 Dentro de campo, o quarterback segue quebrando marcas. <br>
-                Foi o primeiro jogador da NFL a registrar ao menos 25 passes para touchdown e 10 touchdowns terrestres com menos de 10 interceptações em uma única temporada. <br>
+                Foi o primeiro jogador da NFL a registrar ao menos 25 passes para touchdown e 10 touchdowns terrestres
+                com menos de 10 interceptações em uma única temporada. <br>
                 Em 2024, foram 28 passes, 12 corridas para touchdown e apenas 6 interceptações. <br>br
-                
-                Desde sua estreia em 2018, Allen acumula 260 touchdowns (por passe ou corrida), o maior número nas sete primeiras temporadas de qualquer jogador na liga. <br>
+
+                Desde sua estreia em 2018, Allen acumula 260 touchdowns (por passe ou corrida), o maior número nas sete
+                primeiras temporadas de qualquer jogador na liga. <br>
                 O segundo colocado nesse quesito é Patrick Mahomes, com 231. <br><br>
-                
-                Allen também se tornou o terceiro jogador da história dos Bills a vencer o prêmio de MVP, ao lado de Thurman Thomas (1991) e O.J. Simpson (1973). <br>
-                Em sua carreira, soma 65 touchdowns terrestres — 10 a mais que o segundo colocado, Jalen Hurts — e é o único jogador da NFL com pelo menos 40 touchdowns totais por 
+
+                Allen também se tornou o terceiro jogador da história dos Bills a vencer o prêmio de MVP, ao lado de
+                Thurman Thomas (1991) e O.J. Simpson (1973). <br>
+                Em sua carreira, soma 65 touchdowns terrestres — 10 a mais que o segundo colocado, Jalen Hurts — e é o
+                único jogador da NFL com pelo menos 40 touchdowns totais por
                 cinco temporadas seguidas. <br><br>
-                
+
                 Até hoje, apenas Aaron Rodgers superou esse feito, com seis temporadas do tipo. <br>
                 Nenhum outro atleta conseguiu manter esse nível por mais de três anos consecutivos. <br><br>
-                
-                Escolhido na 7ª posição do Draft de 2018, Josh Allen também entrou para um seleto grupo de MVPs que não foram escolhidos para o time All-Pro da temporada. <br>
-                Desde a criação do prêmio, em 1957, apenas John Elway (1987) e Steve McNair (2003) conseguiram tal feito.</p>
-          </div>
-          <br><br><br>
+
+                Escolhido na 7ª posição do Draft de 2018, Josh Allen também entrou para um seleto grupo de MVPs que não
+                foram escolhidos para o time All-Pro da temporada. <br>
+                Desde a criação do prêmio, em 1957, apenas John Elway (1987) e Steve McNair (2003) conseguiram tal
+                feito.</p>
+        </div>
+        <br><br><br>
 
         <span> Fonte: Espn </span>
-        </div> 
+    </div>
 
     <!--footer inicio-->
 
@@ -85,15 +97,20 @@
     </div>
 </body>
 <script>
-          if(sessionStorage.ID_USUARIO == 1) 
-    dash.innerHTML = '<a href="../dashboard.html">Dashboard</a>';
-  
-    function login(){
-    window.location.href = "../login.html"
-  }
+    if (sessionStorage.ID_USUARIO == 1) {
+        dash.innerHTML = '<a href="dashboard.html">Dashboard</a>';
+    }
+    else if (sessionStorage.NOME_USUARIO != undefined || sessionStorage.NOME_USUARIO != null) {
+        hello.innerHTML = `<h4  style="color: white;">Olá, ${sessionStorage.NOME_USUARIO}</h4>`
+    }
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
+    function login() {
+        window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+        window.location.href = "../cadastro.html"
+    }
 </script>
+
 </html>

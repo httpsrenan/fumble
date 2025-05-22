@@ -19,6 +19,7 @@
         <div class="container">
             <img src="../img/logo_fumle.png" width="85px">
             <ul class="navbar">
+                <li id="hello"></li>
                 <li id="dash"></li>
                 <li><a href="../index.html">Menu</li>
                 <li><a href="../times.html">Times</a></li>
@@ -33,33 +34,42 @@
 
     <!--header fim-->
 
-    
-        <div class="noticia-container">
-          <h1 class="titulo-noticia">Por que sensação Shedeur Sanders acabou 'esquecido' e só foi a escolha 144?</h1>
-          <img src="img/shedeur.png" class="imagem-noticia">
-          <div class="conteudo-noticia">
-            <p>Um dos nomes mais comentados do Draft da NFL de 2025, Shedeur Sanders finalmente encontrou um time na liga. <br>
-                Apesar de todo o destaque durante o processo pré-Draft, o quarterback da Universidade do Colorado foi selecionado apenas no terceiro dia do evento, no sábado (26/04), 
+
+    <div class="noticia-container">
+        <h1 class="titulo-noticia">Por que sensação Shedeur Sanders acabou 'esquecido' e só foi a escolha 144?</h1>
+        <img src="img/shedeur.png" class="imagem-noticia">
+        <div class="conteudo-noticia">
+            <p>Um dos nomes mais comentados do Draft da NFL de 2025, Shedeur Sanders finalmente encontrou um time na
+                liga. <br>
+                Apesar de todo o destaque durante o processo pré-Draft, o quarterback da Universidade do Colorado foi
+                selecionado apenas no terceiro dia do evento, no sábado (26/04),
                 pelo Cleveland Browns, na quinta rodada, como a 144ª escolha geral. <br><br>
 
-                Aos 23 anos, Sanders se tornou o segundo quarterback escolhido pelos Browns nesta edição, a franquia já havia selecionado Dillon Gabriel na terceira rodada, 
+                Aos 23 anos, Sanders se tornou o segundo quarterback escolhido pelos Browns nesta edição, a franquia já
+                havia selecionado Dillon Gabriel na terceira rodada,
                 na noite de sexta-feira (25). <br><br>
-                
-                A queda de Sanders no Draft surpreendeu analistas e fãs, sendo considerada uma das mais significativas da história recente. <br>
-                Isso porque o jogador era amplamente visto como um dos melhores quarterbacks disponíveis e projetado para sair nas primeiras rodadas. <br><br>
-                
-                Durante suas duas temporadas em Colorado, Shedeur acumulou números expressivos: foram 64 passes para touchdown, o maior número já registrado por um jogador da universidade. <br>
-                Mesmo com uma linha ofensiva frágil — que permitiu 94 sacks no período, 16 a mais do que qualquer outro quarterback no mesmo intervalo, Sanders manteve alto desempenho. <br>
-                Sob pressão (blitz), por exemplo, ele conseguiu 14 touchdowns, apenas três interceptações e impressionantes 74% de passes completos. <br><br>
-                
-                Apesar disso, o estilo de jogo do QB tem gerado críticas. Especialistas apontam sua mobilidade limitada e a tendência de segurar demais a bola no pocket como fatores que 
+
+                A queda de Sanders no Draft surpreendeu analistas e fãs, sendo considerada uma das mais significativas
+                da história recente. <br>
+                Isso porque o jogador era amplamente visto como um dos melhores quarterbacks disponíveis e projetado
+                para sair nas primeiras rodadas. <br><br>
+
+                Durante suas duas temporadas em Colorado, Shedeur acumulou números expressivos: foram 64 passes para
+                touchdown, o maior número já registrado por um jogador da universidade. <br>
+                Mesmo com uma linha ofensiva frágil — que permitiu 94 sacks no período, 16 a mais do que qualquer outro
+                quarterback no mesmo intervalo, Sanders manteve alto desempenho. <br>
+                Sob pressão (blitz), por exemplo, ele conseguiu 14 touchdowns, apenas três interceptações e
+                impressionantes 74% de passes completos. <br><br>
+
+                Apesar disso, o estilo de jogo do QB tem gerado críticas. Especialistas apontam sua mobilidade limitada
+                e a tendência de segurar demais a bola no pocket como fatores que
                 prejudicaram seu valor no Draft.</p>
-          </div>
-          <br><br><br>
+        </div>
+        <br><br><br>
 
         <span> Fonte: Espn </span>
-        </div> 
-      
+    </div>
+
 
     <!--footer inicio-->
 
@@ -77,15 +87,20 @@
     </div>
 </body>
 <script>
-    if(sessionStorage.ID_USUARIO == 1) 
-    dash.innerHTML = '<a href="../dashboard.html">Dashboard</a>';
+    if (sessionStorage.ID_USUARIO == 1) {
+        dash.innerHTML = '<a href="dashboard.html">Dashboard</a>';
+    }
+    else if (sessionStorage.NOME_USUARIO != undefined || sessionStorage.NOME_USUARIO != null) {
+        hello.innerHTML = `<h4  style="color: white;">Olá, ${sessionStorage.NOME_USUARIO}</h4>`
+    }
 
-    function login(){
-    window.location.href = "../login.html"
-  }
+    function login() {
+        window.location.href = "../login.html"
+    }
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
+    function cadastrar() {
+        window.location.href = "../cadastro.html"
+    }
 </script>
+
 </html>

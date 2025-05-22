@@ -19,6 +19,7 @@
         <div class="container">
             <img src="img/logo_fumle.png" width="85px">
             <ul class="navbar">
+                <li id="hello"></li>    
                 <li id="dash"></li>
                 <li><a href="index.html">Menu</a></li>
                 <li class="agora">Times</li>
@@ -51,7 +52,10 @@
               suas origens, conquistas e destaques atuais. Se você está começando <br>
               agora no mundo do futebol americano ou já é fã de longa data, essa é <br>
               a oportunidade perfeita para descobrir seu time favorito e se aprofundar <br>
-              nas rivalidades e tradições da liga.
+              nas rivalidades e tradições da liga. <br><br>
+
+              E aproveite para favoritar os seu times preferidos, é so entrar na pagina <br>
+              do time escolhido e favoritar.
             </p>
           </div>
         </div>
@@ -138,8 +142,12 @@
     <!--footer fim-->
 </body>
 <script>
-          if(sessionStorage.ID_USUARIO == 1) 
-    dash.innerHTML = '<a href="dashboard.html">Dashboard</a>';
+    if (sessionStorage.ID_USUARIO == 1) {
+        dash.innerHTML = '<a href="dashboard.html">Dashboard</a>';
+    }
+    else if (sessionStorage.NOME_USUARIO != undefined || sessionStorage.NOME_USUARIO != null) {
+        hello.innerHTML = `<h4  style="color: white;">Olá, ${sessionStorage.NOME_USUARIO}</h4>`
+    }
   
     function login(){
     window.location.href = "login.html"

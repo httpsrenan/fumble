@@ -19,6 +19,7 @@
         <div class="container">
             <img src="../img/logo_fumle.png" width="85px">
             <ul class="navbar">
+                <li id="hello"></li>
                 <li id="dash"></li>
                 <li><a href="../index.html">Menu</li>
                 <li><a href="../times.html">Times</a></li>
@@ -33,35 +34,45 @@
 
     <!--header fim-->
 
-    
-        <div class="noticia-container">
-          <h1 class="titulo-noticia">Campeão da NFL assina contrato de R$ 242 milhões e vira running back mais bem pago da história</h1>
-          <img src="img/rb.png" class="imagem-noticia">
-          <div class="conteudo-noticia">
-            <p>O Philadelphia Eagles, atual campeão da NFL, premiou o running back Saquon Barkley com uma extensão de contrato de dois anos avaliada em US$ 41,2 milhões 
+
+    <div class="noticia-container">
+        <h1 class="titulo-noticia">Campeão da NFL assina contrato de R$ 242 milhões e vira running back mais bem pago da
+            história</h1>
+        <img src="img/rb.png" class="imagem-noticia">
+        <div class="conteudo-noticia">
+            <p>O Philadelphia Eagles, atual campeão da NFL, premiou o running back Saquon Barkley com uma extensão de
+                contrato de dois anos avaliada em US$ 41,2 milhões
                 (cerca de R$ 242 milhões), após sua temporada histórica pela equipe. <br><br>
 
-                Embora os valores não tenham sido oficialmente divulgados, a apuração de Adam Schefter, da ESPN, revelou que o novo contrato faz de Barkley o running 
+                Embora os valores não tenham sido oficialmente divulgados, a apuração de Adam Schefter, da ESPN, revelou
+                que o novo contrato faz de Barkley o running
                 back mais bem pago da história da liga. <br>
-                O acordo inclui US$ 36 milhões (R$ 211 milhões) garantidos na assinatura, e pode chegar a US$ 56,2 milhões (R$ 330 milhões) com bônus por metas alcançadas,
-                tornando Barkley o primeiro jogador da posição a ultrapassar os US$ 20 milhões (R$ 117 milhões) por temporada. <br><br>
-                
-                “Transbordando! Grato pela organização dos Eagles, grato pelo meu time, grato pelos fãs incríveis na Filadélfia. Voa Eagles, voa”, 
+                O acordo inclui US$ 36 milhões (R$ 211 milhões) garantidos na assinatura, e pode chegar a US$ 56,2
+                milhões (R$ 330 milhões) com bônus por metas alcançadas,
+                tornando Barkley o primeiro jogador da posição a ultrapassar os US$ 20 milhões (R$ 117 milhões) por
+                temporada. <br><br>
+
+                “Transbordando! Grato pela organização dos Eagles, grato pelo meu time, grato pelos fãs incríveis na
+                Filadélfia. Voa Eagles, voa”,
                 publicou Barkley em seu perfil no X (antigo Twitter), nesta terça-feira (13). <br><br>
-                
-                O desempenho do atleta justificou o investimento: Barkley correu para 2.504 jardas em 2024, quebrando o recorde histórico de Terrell Davis e colocando 
+
+                O desempenho do atleta justificou o investimento: Barkley correu para 2.504 jardas em 2024, quebrando o
+                recorde histórico de Terrell Davis e colocando
                 seu nome entre os maiores desempenhos de todos os tempos para um running back. <br><br>
-                
-                Ele chegou ao time em março do ano passado com um contrato de três anos no valor de US$ 38 milhões (R$ 223 milhões). À época, o valor chamou atenção, mas 
+
+                Ele chegou ao time em março do ano passado com um contrato de três anos no valor de US$ 38 milhões (R$
+                223 milhões). À época, o valor chamou atenção, mas
                 os Eagles apostaram na oportunidade ao identificar uma lacuna no mercado — e acertaram. <br><br>
-                
-                Aos 28 anos, Barkley acumula 7.216 jardas terrestres e 48 touchdowns ao longo de sete temporadas entre New York Giants e Philadelphia Eagles. <br>
-                Na última temporada, foi eleito para o terceiro Pro Bowl da carreira, entrou no time principal do All-Pro e ainda levou o prêmio de Jogador Ofensivo do Ano da NFL.</p>
-          </div> 
-          <br><br><br>
+
+                Aos 28 anos, Barkley acumula 7.216 jardas terrestres e 48 touchdowns ao longo de sete temporadas entre
+                New York Giants e Philadelphia Eagles. <br>
+                Na última temporada, foi eleito para o terceiro Pro Bowl da carreira, entrou no time principal do
+                All-Pro e ainda levou o prêmio de Jogador Ofensivo do Ano da NFL.</p>
+        </div>
+        <br><br><br>
 
         <span> Fonte: Espn </span>
-        </div> 
+    </div>
 
     <!--footer inicio-->
 
@@ -79,15 +90,20 @@
     </div>
 </body>
 <script>
-          if(sessionStorage.ID_USUARIO == 1) 
-    dash.innerHTML = '<a href="../dashboard.html">Dashboard</a>';
-  
-    function login(){
-    window.location.href = "../login.html"
-  }
+    if (sessionStorage.ID_USUARIO == 1) {
+        dash.innerHTML = '<a href="dashboard.html">Dashboard</a>';
+    }
+    else if (sessionStorage.NOME_USUARIO != undefined || sessionStorage.NOME_USUARIO != null) {
+        hello.innerHTML = `<h4  style="color: white;">Olá, ${sessionStorage.NOME_USUARIO}</h4>`
+    }
 
-  function cadastrar(){
-    window.location.href = "../cadastro.html"
-  }
+    function login() {
+        window.location.href = "../login.html"
+    }
+
+    function cadastrar() {
+        window.location.href = "../cadastro.html"
+    }
 </script>
+
 </html>

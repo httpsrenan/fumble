@@ -40,7 +40,7 @@ body {
 }
 
 .navbar {
-  width: 300px;
+  width: 70vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,6 +49,7 @@ body {
   margin: 55px;
   padding: 100px;
   gap: 15px;
+  margin-right: -150px;
 }
 
 .navbar li a {
