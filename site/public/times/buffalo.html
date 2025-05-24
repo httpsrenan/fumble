@@ -118,7 +118,7 @@
 
     window.onload = function () {
       var idUsuario = sessionStorage.ID_USUARIO;
-      var idTime = 31;
+      var idTime = 1;
 
       fetch(`/favorito/verificar/${idUsuario}/${idTime}`)
         .then(res => res.json())
@@ -177,10 +177,6 @@
 
     }
   </script>
-</body>
-
-</html>
-
 </body>
 
 </html>

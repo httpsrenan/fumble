@@ -50,6 +50,13 @@
             </div>
         </div>
 
+        <div class="kpi-card" id="kpi-total-media">
+            <div class="kpi-content">
+                <div class="kpi-label">Média de Favoritos <br> por Usuário</div>
+                <div class="kpi-value">0</div>
+            </div>
+        </div>
+
     </div>
 
     <div class="graficos-container">
@@ -105,6 +112,9 @@
             clearTimeout(proximaAtualizacao);
         }
 
+        let totalUser = 0;
+        let totalFavoritos = 0;
+
         // KPI 1: Total de Favoritos
         fetch('/dashboard/total-favoritos', { cache: 'no-store' })
             .then(response => {
@@ -112,6 +122,9 @@
                     response.json().then(data => {
                         document.getElementById('kpi-total-favoritos').querySelector('.kpi-value').textContent =
                             data.total.toLocaleString();
+                        totalFavoritos = data.total;
+
+                        calcularMedia();
                     });
                 }
             })
@@ -124,10 +137,22 @@
                     response.json().then(data => {
                         document.getElementById('kpi-total-usuarios').querySelector('.kpi-value').textContent =
                             data.total.toLocaleString();
+                        totalUser = data.total;
+
+                        calcularMedia();
                     });
                 }
             })
             .catch(error => console.error('Erro ao obter total de usuários:', error));
+
+        // KPI 3: Média de favoritos por usuário
+        function calcularMedia() {
+            if (totalFavoritos > 0 && totalUser > 0) {
+                const media = (totalFavoritos / totalUser).toFixed(2);
+                document.getElementById('kpi-total-media').querySelector('.kpi-value').textContent = media;
+            }
+        }
+
 
 
         // Atualiza a cada 30 segundos
