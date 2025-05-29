@@ -17,7 +17,7 @@
     <!--header inicio-->
     <div class="header">
         <div class="container">
-            <img src="../img/logo_fumle.png" width="85px">
+            <a href="../index.html"><img src="../img/logo_fumle.png" width="85px"></a>
             <ul class="navbar">
                 <li id="hello"></li>
                 <li id="dash"></li>
@@ -72,7 +72,7 @@
     <div class="footer">
         <div class="container">
             <div class="conteudo">
-                <img src="../img/logo_fumle.png" width="70px">
+                <a href="../index.html"><img src="../img/logo_fumle.png" width="70px"></a>
                 <div class="redes-sociais">
                     <img src="../img/instax.png" alt="Instagram" width="30px">
 
@@ -84,7 +84,7 @@
 </body>
 <script>
     if (sessionStorage.ID_USUARIO == 1) {
-        dash.innerHTML = '<a href="dashboard.html">Dashboard</a>';
+        dash.innerHTML = '<a href="../dashboard.html">Dashboard</a>';
     }
     else if (sessionStorage.NOME_USUARIO != undefined || sessionStorage.NOME_USUARIO != null) {
         hello.innerHTML = `<h4  style="color: white;">Olá, ${sessionStorage.NOME_USUARIO}</h4>`
