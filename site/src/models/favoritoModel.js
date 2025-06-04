@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function inserirFavorito(idUsuario, idTime) {
   var instrucaoSql = `
-    insert into favoritar (fk_usuario, fk_time) vslues (${idUsuario}, ${idTime});
+    insert into favoritar (fk_usuario, fk_time) values (${idUsuario}, ${idTime});
   `;
   return database.executar(instrucaoSql);
 }
