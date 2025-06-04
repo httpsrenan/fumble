@@ -1,111 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FUMBLE - Dasboard</title>
+        <title>FUMBLE - Dasboard</title>
 
-    <link rel="stylesheet" href="dstyle.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" href="img/logo.png" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+        <link rel="stylesheet" href="dstyle.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="icon" href="img/logo.png" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
 
-<body>
+    <body>
 
-    <!--header inicio-->
-    <div class="header">
-        <div class="container">
-            <a href="index.html"><img src="img/logo_fumle.png" width="85px"></a>
-            <ul class="navbar">
-                <li><a href="index.html">Menu</a></li>
-                <li><a href="times.html">Times</a></li>
-                <li><a href="historia.html">História</a></li>
-                <li><a href="regras.html">Regras</a></li>
-                <li><a href="noticias.html">Notícias</a></li>
-                <li><button class="login" onclick="login()">Login</button></li>
-                <li><button class="cadastro" onclick="cadastro()">Cadastrar</button></li>
-            </ul>
-        </div>
-    </div>
-
-    <!--header fim-->
-
-    <div class="dashboard-header">
-        <h1 style="color: white;">Dashboard de Controle</h1>
-
-        <div class="kpi-card" id="kpi-total-favoritos">
-            <div class="kpi-content">
-                <div class="kpi-label">Total de Favoritos</div>
-                <div class="kpi-value">0</div>
+        <!--header inicio-->
+        <div class="header">
+            <div class="container">
+                <a href="index.html"><img src="img/logo_fumle.png" width="85px"></a>
+                <ul class="navbar">
+                    <li><a href="index.html">Menu</a></li>
+                    <li><a href="times.html">Times</a></li>
+                    <li><a href="historia.html">História</a></li>
+                    <li><a href="regras.html">Regras</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><button class="login" onclick="login()">Login</button></li>
+                    <li><button class="cadastro" onclick="cadastro()">Cadastrar</button></li>
+                </ul>
             </div>
         </div>
 
-        <div class="kpi-card" id="kpi-total-usuarios">
-            <div class="kpi-content">
-                <div class="kpi-label">Usuários Registrados</div>
-                <div class="kpi-value">0</div>
+        <!--header fim-->
+
+        <div class="dashboard-header">
+            <h1 style="color: white;">Dashboard de Controle</h1>
+
+            <div class="kpi-card" id="kpi-total-favoritos">
+                <div class="kpi-content">
+                    <div class="kpi-label">Total de Favoritos</div>
+                    <div class="kpi-value">0</div>
+                </div>
             </div>
-        </div>
 
-        <div class="kpi-card" id="kpi-total-media">
-            <div class="kpi-content">
-                <div class="kpi-label">Média de Favoritos <br> por Usuário</div>
-                <div class="kpi-value">0</div>
+            <div class="kpi-card" id="kpi-total-usuarios">
+                <div class="kpi-content">
+                    <div class="kpi-label">Usuários Registrados</div>
+                    <div class="kpi-value">0</div>
+                </div>
             </div>
+
+            <div class="kpi-card" id="kpi-total-media">
+                <div class="kpi-content">
+                    <div class="kpi-label">Média de Favoritos <br> por Usuário</div>
+                    <div class="kpi-value">0</div>
+                </div>
+            </div>
+
         </div>
 
-    </div>
-
-    <div class="graficos-container">
+        <div class="graficos-container">
 
 
-        <div class="grafico">
-            <h2 style="color: white;"> ↑ 10 Times mais favoritados</h2>
-            <canvas id="graficoMaisFavoritados"></canvas>
+            <div class="grafico">
+                <h2 style="color: white;"> ↑ 10 Times mais favoritados</h2>
+                <canvas id="graficoMaisFavoritados"></canvas>
+            </div>
+
+            <div class="grafico">
+                <h2 style="color: white;"> ↓ 10 Times menos favoritados</h2>
+                <canvas id="graficoMenosFavoritados"></canvas>
+            </div>
+
+            <br><br><br>
+
+            <div class="grafico">
+                <h2 style="color: white;"> 5 Usuários que mais favoritaram times</h2>
+                <canvas id="graficoUsuariosMaisFavoritaram"></canvas>
+            </div>
+
+            <div class="grafico" style="max-width: 500px; max-height: 500px;">
+                <h2 style="color: white;">AFC X NFC</h2>
+                <canvas id="conferencia" style="max-width: 700px; max-height: 400px;"></canvas>
+            </div>
+
+
         </div>
+        <!--footer inicio-->
 
-        <div class="grafico">
-            <h2 style="color: white;"> ↓ 10 Times menos favoritados</h2>
-            <canvas id="graficoMenosFavoritados"></canvas>
-        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="conteudo">
+                    <a href="index.html"><img src="img/logo_fumle.png" width="70px"></a>
+                    <div class="redes-sociais">
+                        <img src="img/instax.png" alt="Instagram" width="30px">
 
-        <br><br><br>
+    </body>
+    <script>
+                function login() {
+            window.location.href = "login.html";
+        }
 
-        <div class="grafico">
-            <h2 style="color: white;"> 5 Usuários que mais favoritaram times</h2>
-            <canvas id="graficoUsuariosMaisFavoritaram"></canvas>
-        </div>
+        function cadastrar() {
+            window.location.href = "cadastro.html";
+        }
 
-        <div class="grafico" style="max-width: 500px; max-height: 500px;">
-            <h2 style="color: white;">AFC X NFC</h2>
-            <canvas id="conferencia" style="max-width: 700px; max-height: 400px;"></canvas>
-        </div>
-
-
-    </div>
-    <!--footer inicio-->
-
-    <div class="footer">
-        <div class="container">
-            <div class="conteudo">
-                <a href="index.html"><img src="img/logo_fumle.png" width="70px"></a>
-                <div class="redes-sociais">
-                    <img src="img/instax.png" alt="Instagram" width="30px">
-
-</body>
-<script>
-    function login() {
-        window.location.href = "login.html"
-    }
-
-    function cadastrar() {
-        window.location.href = "cadastro.html"
-    }
-
-    let proximaAtualizacao = null;
+        let proximaAtualizacao;
 
     function carregarKPIs() {
         if (proximaAtualizacao !== undefined) {
@@ -154,144 +154,135 @@
         }
 
 
-
         // Atualiza a cada 30 segundos
         proximaAtualizacao = setTimeout(carregarKPIs, 30000);
     }
 
-    // Inicializa tudo quando o DOM estiver pronto
-    document.addEventListener('DOMContentLoaded', function () {
-        gerarGraficos();
-        carregarKPIs();
-    });
+    function gerarGraficoMaisFavoritados() {
+        fetch('/dashboard/mais-favoritados', { cache: 'no-store' })
+            .then(res => res.json())
+            .then(dados => {
+                let nomes = [];
+                let valores = [];
 
-    const charts = {};
-
-    function obterDadosGrafico(tipoGrafico, elementoId, configGrafico) {
-        if (proximaAtualizacao !== undefined) {
-            clearTimeout(proximaAtualizacao);
-        }
-
-        fetch(`/dashboard/${tipoGrafico}`, { cache: 'no-store' })
-            .then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Dados recebidos para ${tipoGrafico}: ${JSON.stringify(resposta)}`);
-                        plotarGrafico(resposta, elementoId, configGrafico);
-                    });
-                } else {
-                    console.error(`Nenhum dado encontrado ou erro na API para ${tipoGrafico}`);
+                for (let i = 0; i < dados.length; i++) {
+                    nomes.push(dados[i].nome);
+                    valores.push(dados[i].total_favoritos);
                 }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados para ${tipoGrafico}: ${error.message}`);
+
+                let ctx = document.getElementById('graficoMaisFavoritados');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: nomes,
+                        datasets: [{
+                            label: 'Favoritos',
+                            data: valores,
+                            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                            borderColor: 'rgb(75, 192, 192)'
+                        }]
+                    }
+                });
             });
     }
 
-    function plotarGrafico(dados, elementoId, configGrafico) {
-        console.log(`Iniciando plotagem do gráfico ${elementoId}...`);
+    function gerarGraficoMenosFavoritados() {
+        fetch('/dashboard/menos-favoritados', { cache: 'no-store' })
+            .then(res => res.json())
+            .then(dados => {
+                let nomes = [];
+                let valores = [];
 
-        // Destruir o gráfico anterior, se existir
-        if (charts[elementoId]) {
-            charts[elementoId].destroy();
-        }
+                for (let i = 0; i < dados.length; i++) {
+                    nomes.push(dados[i].nome);
+                    valores.push(dados[i].total_favoritos);
+                }
 
-        // Processar dados
-        const labels = [];
-        const valores = [];
-
-        for (let i = 0; i < dados.length; i++) {
-            labels.push(dados[i].nome || dados[i].conferencia);
-            valores.push(dados[i].total_favoritos);
-        }
-
-        // Configurar gráfico
-        const config = {
-            type: configGrafico.type,
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: configGrafico.label,
-                    data: valores,
-                    backgroundColor: configGrafico.backgroundColor,
-                    borderColor: configGrafico.borderColor,
-                    tension: 0.1
-                }]
-            },
-            options: configGrafico.options || {}
-        };
-
-        console.log('----------------------------------------------');
-        console.log(`Configuração do gráfico ${elementoId}:`);
-        console.log(config);
-        console.log('----------------------------------------------');
-
-        // Criar gráfico e armazenar no objeto global
-        const ctx = document.getElementById(elementoId);
-        charts[elementoId] = new Chart(ctx, config);
+                let ctx = document.getElementById('graficoMenosFavoritados');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: nomes,
+                        datasets: [{
+                            label: 'Favoritos',
+                            data: valores,
+                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                            borderColor: 'rgb(255, 99, 132)'
+                        }]
+                    }
+                });
+            });
     }
 
-    function gerarGraficos() {
-        // Gráfico de times mais favoritados
-        obterDadosGrafico(
-            'mais-favoritados',
-            'graficoMaisFavoritados',
-            {
-                type: 'bar',
-                label: 'Favoritos',
-                backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                borderColor: 'rgb(75, 192, 192)'
-            }
-        );
+    function gerarGraficoUsuariosMaisFavoritaram() {
+        fetch('/dashboard/usuarios-mais-favoritaram', { cache: 'no-store' })
+            .then(res => res.json())
+            .then(dados => {
+                let nomes = [];
+                let valores = [];
 
-        // Gráfico de times menos favoritados
-        obterDadosGrafico(
-            'menos-favoritados',
-            'graficoMenosFavoritados',
-            {
-                type: 'bar',
-                label: 'Favoritos',
-                backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                borderColor: 'rgb(255, 99, 132)'
-            }
-        );
+                for (let i = 0; i < dados.length; i++) {
+                    nomes.push(dados[i].nome);
+                    valores.push(dados[i].total_favoritos);
+                }
 
-        // Gráfico de usuários que mais favoritaram
-        obterDadosGrafico(
-            'usuarios-mais-favoritaram',
-            'graficoUsuariosMaisFavoritaram',
-            {
-                type: 'bar',
-                label: 'Favoritos realizados',
-                backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                borderColor: 'rgb(54, 162, 235)'
-            }
-        );
+                let ctx = document.getElementById('graficoUsuariosMaisFavoritaram');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: nomes,
+                        datasets: [{
+                            label: 'Favoritos realizados',
+                            data: valores,
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                            borderColor: 'rgb(54, 162, 235)'
+                        }]
+                    }
+                });
+            });
+    }
 
-        // Gráfico de favoritos por conferência
-        obterDadosGrafico(
-            'favoritos-por-conferencia',
-            'conferencia',
-            {
-                type: 'pie',
-                label: 'AFC X NFC',
-                backgroundColor: ['#d10e1e', '#003a68'],
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
+    function gerarGraficoConferencia() {
+        fetch('/dashboard/favoritos-por-conferencia', { cache: 'no-store' })
+            .then(res => res.json())
+            .then(dados => {
+                let nomes = [];
+                let valores = [];
+
+                for (let i = 0; i < dados.length; i++) {
+                    nomes.push(dados[i].conferencia);
+                    valores.push(dados[i].total_favoritos);
+                }
+
+                let ctx = document.getElementById('conferencia');
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: nomes,
+                        datasets: [{
+                            label: 'AFC X NFC',
+                            data: valores,
+                            backgroundColor: ['#d10e1e', '#003a68']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top'
+                            }
                         }
                     }
-                }
-            }
-        );
+                });
+            });
     }
 
-    // Inicializa os gráficos quando o DOM estiver pronto
-    document.addEventListener('DOMContentLoaded', function () {
-        gerarGraficos();
-    });
+    // Chando os graficos/kpi
+    carregarKPIs();
+    gerarGraficoMaisFavoritados();
+    gerarGraficoMenosFavoritados();
+    gerarGraficoUsuariosMaisFavoritaram();
+    gerarGraficoConferencia();
 </script>
 
-</html>
+    </html>
